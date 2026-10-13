@@ -1,2 +1,2 @@
-# world_bites
-Trang web bài tập môn Tin học 12
+# WORLD_BITES
+Thích ăn thì lăn vào bếp, thích nhìn thì lăn vào đây!
