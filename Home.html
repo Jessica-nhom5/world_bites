@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nhóm 5 - Tin học 12</title>
+    <!-- Nhúng Font chữ không chân tròn bo Lexend chuẩn đẹp -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- FontAwesome cho icon -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Lexend', Arial, sans-serif;
+            background-color: #d9e3b3; /* Tông màu nền kem - xanh lá nhạt theo mẫu */
+            color: #2d3748;
+        }
+
+        /* Phần Header / Hero Banner */
+        .hero-section {
+            background-color: #3b4d61; /* Màu xanh đen xám chủ đạo */
+            color: #ffffff;
+            text-align: center;
+            padding: 30px 20px 50px 20px;
+            border-bottom-left-radius: 20px;
+            border-bottom-right-radius: 20px;
+        }
+
+        /* Logo Nhóm */
+        .group-logo {
+            width: 70px;
+            height: 70px;
+            background-color: #ffffff;
+            border-radius: 16px;
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+        }
+
+        .group-logo i {
+            font-size: 36px;
+            color: #3b4d61;
+        }
+
+        /* Thanh Menu điều hướng */
+        .nav-links {
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+            margin-bottom: 25px;
+        }
+
+        .nav-links a {
+            color: #e2e8f0;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 1.05rem;
+            transition: color 0.2s;
+        }
+
+        .nav-links a:hover {
+            color: #ffffff;
+            text-decoration: underline;
+        }
+
+        .group-title {
+            font-size: 2.2rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+
+        .group-subtitle {
+            font-size: 1.05rem;
+            color: #cbd5e0;
+            font-weight: 400;
+        }
+
+        /* Khung nội dung chính */
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        .section-title {
+            font-size: 1.6rem;
+            font-weight: 700;
+            color: #2b374e;
+            margin-bottom: 25px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        /* Danh sách thành viên (Cards) */
+        .members-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+            gap: 15px;
+            margin-bottom: 50px;
+        }
+
+        .member-card {
+            background-color: #ffffff;
+            border-radius: 20px;
+            padding: 20px 10px;
+            text-align: center;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .avatar-box {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            overflow: hidden;
+            border: 3px solid #e2e8f0;
+            margin-bottom: 12px;
+            background-color: #edf2f7;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .avatar-box img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .member-name {
+            font-size: 0.95rem;
+            font-weight: 600;
+            color: #2d3748;
+            margin-bottom: 12px;
+            height: 38px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .btn-profile {
+            display: inline-block;
+            background-color: #3b4d61;
+            color: #ffffff;
+            text-decoration: none;
+            font-size: 0.8rem;
+            padding: 6px 12px;
+            border-radius: 10px;
+            font-weight: 500;
+            transition: background-color 0.2s;
+        }
+
+        .btn-profile:hover {
+            background-color: #2b374e;
+        }
+
+        /* Khung Bài tập & Thuyết trình */
+        .content-box {
+            background-color: #e2ebc7;
+            border-radius: 18px;
+            padding: 25px;
+            margin-bottom: 25px;
+        }
+
+        .task-card {
+            background-color: #ffffff;
+            border-radius: 16px;
+            padding: 20px;
+            margin-top: 15px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+        }
+
+        .task-title {
+            font-size: 1.15rem;
+            font-weight: 700;
+            color: #2b374e;
+            margin-bottom: 8px;
+        }
+
+        .task-desc {
+            font-size: 0.9rem;
+            color: #718096;
+            margin-bottom: 15px;
+        }
+
+        .btn-task {
+            display: inline-block;
+            background-color: #3b4d61;
+            color: #ffffff;
+            text-decoration: none;
+            font-size: 0.85rem;
+            padding: 8px 16px;
+            border-radius: 8px;
+            font-weight: 500;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- PHẦN BANNER & THANH ĐIỀU HƯỚNG -->
+    <header class="hero-section">
+        <!-- Logo nhóm -->
+        <div class="group-logo">
+            <i class="fa-solid fa-laptop-code"></i>
+        </div>
+
+        <!-- Menu chuyển hướng -->
+        <nav class="nav-links">
+            <a href="#thanh-vien">Thành viên</a>
+            <a href="#bai-tap">Bài tập</a>
+            <a href="#thuyet-trinh">Thuyết trình</a>
+        </nav>
+
+        <!-- Tiêu đề chính -->
+        <h1 class="group-title">Nhóm 5 – Lớp 12</h1>
+        <p class="group-subtitle">Trang web tổng hợp bài tập & thuyết trình của nhóm</p>
+    </header>
+
+    <!-- NỘI DUNG CHÍNH -->
+    <main class="container">
+
+        <!-- DANH MỤC THÀNH VIÊN -->
+        <section id="thanh-vien">
+            <h2 class="section-title">
+                <i class="fa-solid fa-users"></i> Thành viên nhóm
+            </h2>
+            
+            <div class="members-grid">
+                <!-- Thành viên 1 -->
+                <div class="member-card">
+                    <div class="avatar-box">
+                        <img src="https://via.placeholder.com/100" alt="Avatar">
+                    </div>
+                    <div class="member-name">Nguyễn Văn A</div>
+                    <a href="#" class="btn-profile">Trang cá nhân</a>
+                </div>
+
+                <!-- Thành viên 2 -->
+                <div class="member-card">
+                    <div class="avatar-box">
+                        <img src="https://via.placeholder.com/100" alt="Avatar">
+                    </div>
+                    <div class="member-name">Trần Thị B</div>
+                    <a href="#" class="btn-profile">Trang cá nhân</a>
+                </div>
+
+                <!-- Thành viên 3 -->
+                <div class="member-card">
+                    <div class="avatar-box">
+                        <img src="https://via.placeholder.com/100" alt="Avatar">
+                    </div>
+                    <div class="member-name">Lê Minh C</div>
+                    <a href="#" class="btn-profile">Trang cá nhân</a>
+                </div>
+
+                <!-- Thành viên 4 -->
+                <div class="member-card">
+                    <div class="avatar-box">
+                        <img src="https://via.placeholder.com/100" alt="Avatar">
+                    </div>
+                    <div class="member-name">Phạm Hoàng D</div>
+                    <a href="#" class="btn-profile">Trang cá nhân</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- DANH MỤC BÀI TẬP -->
+        <section id="bai-tap" class="content-box">
+            <h2 class="section-title">
+                <i class="fa-solid fa-book"></i> CHỦ ĐỀ: Bài tập môn Tin học
+            </h2>
+
+            <div class="task-card">
+                <div class="task-title">Bài 7: HTML và cấu trúc trang web</div>
+                <div class="task-desc">(Mô tả ngắn bài tập...)</div>
+                <a href="#" class="btn-task">Xem bài làm</a>
+            </div>
+        </section>
+
+        <!-- DANH MỤC THUYẾT TRÌNH -->
+        <section id="thuyet-trinh" class="content-box">
+            <h2 class="section-title">
+                <i class="fa-solid fa-person-chalkboard"></i> Bài thuyết trình
+            </h2>
+
+            <div class="task-card">
+                <div class="task-title">Chủ đề 4: Giải quyết vấn đề với sự trợ giúp của máy tính</div>
+                <div class="task-desc">(Slide thuyết trình và bài báo cáo của nhóm...)</div>
+                <a href="#" class="btn-task">Xem bài thuyết trình</a>
+            </div>
+        </section>
+
+    </main>
+
+</body>
+</html>
