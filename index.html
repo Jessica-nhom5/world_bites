@@ -3,13 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nhóm 5 - Tin học 12</title>
-    <!-- Nhúng Font chữ không chân tròn bo Lexend chuẩn đẹp -->
+    <title>World Bites - Trang Chủ Nhóm</title>
+    
+    <!-- Nhúng Font chữ hiển thị chuẩn Scrapbook / Hand-drawn -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <!-- FontAwesome cho icon -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Quicksand:wght@500;600;700&display=swap" rel="stylesheet">
 
     <style>
         * {
@@ -18,296 +17,415 @@
             padding: 0;
         }
 
-        html {
-            scroll-behavior: smooth;
-        }
-
         body {
-            font-family: 'Lexend', Arial, sans-serif;
-            background-color: #d9e3b3; /* Tông màu nền kem - xanh lá nhạt theo mẫu */
-            color: #2d3748;
+            font-family: 'Quicksand', sans-serif;
+            background-color: #E6F1FA; /* Color: Frost */
+            color: #1C3A56;
+            line-height: 1.6;
+            padding-bottom: 50px;
         }
 
-        /* Phần Header / Hero Banner */
-        .hero-section {
-            background-color: #3b4d61; /* Màu xanh đen xám chủ đạo */
-            color: #ffffff;
-            text-align: center;
-            padding: 30px 20px 50px 20px;
-            border-bottom-left-radius: 20px;
-            border-bottom-right-radius: 20px;
+        h1, h2, h3, .logo-text, .nav-link, .btn-action, .btn-profile {
+            font-family: 'Fredoka', cursive, sans-serif;
         }
 
-        /* Logo Nhóm */
-        .group-logo {
-            width: 70px;
-            height: 70px;
-            background-color: #ffffff;
-            border-radius: 16px;
-            display: inline-flex;
-            justify-content: center;
-            align-items: center;
-            margin-bottom: 20px;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+        /* Navbar Scrapbook Style */
+        header {
+            background-color: #FFFFFF;
+            border-bottom: 4px solid #1C3A56;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 4px 0px rgba(28, 58, 86, 0.15);
         }
 
-        .group-logo i {
-            font-size: 36px;
-            color: #3b4d61;
-        }
-
-        /* Thanh Menu điều hướng */
-        .nav-links {
-            display: flex;
-            justify-content: center;
-            gap: 25px;
-            margin-bottom: 25px;
-        }
-
-        .nav-links a {
-            color: #e2e8f0;
-            text-decoration: none;
-            font-weight: 500;
-            font-size: 1.05rem;
-            transition: color 0.2s;
-        }
-
-        .nav-links a:hover {
-            color: #ffffff;
-            text-decoration: underline;
-        }
-
-        .group-title {
-            font-size: 2.2rem;
-            font-weight: 700;
-            margin-bottom: 10px;
-        }
-
-        .group-subtitle {
-            font-size: 1.05rem;
-            color: #cbd5e0;
-            font-weight: 400;
-        }
-
-        /* Khung nội dung chính */
-        .container {
-            max-width: 1000px;
+        .nav-container {
+            max-width: 1100px;
             margin: 0 auto;
-            padding: 40px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 20px;
         }
 
-        .section-title {
-            font-size: 1.6rem;
-            font-weight: 700;
-            color: #2b374e;
-            margin-bottom: 25px;
+        .logo-area {
             display: flex;
             align-items: center;
-            gap: 10px;
+            gap: 12px;
         }
 
-        /* Danh sách thành viên (Cards) */
-        .members-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+        /* Logo Badge kiểu con dấu Cắt dán */
+        .logo-img {
+            width: 48px;
+            height: 48px;
+            background-color: #B9C255; /* Color: Pistachio */
+            border: 3px solid #1C3A56;
+            border-radius: 12px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #1C3A56;
+            font-weight: 700;
+            font-size: 1.3rem;
+            transform: rotate(-4deg);
+            box-shadow: 3px 3px 0px #1C3A56;
+        }
+
+        .logo-text {
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: #1C3A56;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
             gap: 15px;
+        }
+
+        .nav-link {
+            text-decoration: none;
+            color: #1C3A56;
+            font-weight: 600;
+            padding: 8px 16px;
+            background-color: #E6F1FA;
+            border: 2px solid #1C3A56;
+            border-radius: 20px;
+            box-shadow: 2px 2px 0px #1C3A56;
+            transition: all 0.2s ease;
+        }
+
+        .nav-link:hover {
+            background-color: #B9C255;
+            transform: translate(-2px, -2px);
+            box-shadow: 4px 4px 0px #1C3A56;
+        }
+
+        /* Banner kiểu Scrapbook Cắt Dán */
+        .hero {
+            background-color: #5798D7; /* Color: Iced Denim */
+            border-top: 3px solid #1C3A56;
+            border-bottom: 4px solid #1C3A56;
+            padding: 60px 20px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-sticker {
+            display: inline-block;
+            background-color: #FFFFFF;
+            border: 3px solid #1C3A56;
+            padding: 25px 40px;
+            border-radius: 18px;
+            box-shadow: 6px 6px 0px #1C3A56;
+            transform: rotate(-1.5deg);
+            max-width: 800px;
+        }
+
+        .hero h1 {
+            font-size: 2.8rem;
+            color: #1C3A56;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 8px;
+        }
+
+        .hero p {
+            font-size: 1.15rem;
+            color: #1C3A56;
+            font-weight: 600;
+            background-color: #B9C255;
+            display: inline-block;
+            padding: 4px 15px;
+            border-radius: 8px;
+            border: 2px solid #1C3A56;
+        }
+
+        /* Container Chính */
+        .container {
+            max-width: 1100px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+
+        section {
             margin-bottom: 50px;
         }
 
+        /* Tiêu đề mục nhãn Sticker */
+        .section-title {
+            display: inline-block;
+            font-size: 1.6rem;
+            color: #1C3A56;
+            background-color: #B9C255; /* Color: Pistachio */
+            padding: 8px 22px;
+            border: 3px solid #1C3A56;
+            border-radius: 12px;
+            box-shadow: 4px 4px 0px #1C3A56;
+            transform: rotate(-1deg);
+            margin-bottom: 30px;
+            text-transform: uppercase;
+        }
+
+        /* Lưới Thành Viên (6 Thành viên) */
+        .members-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+            gap: 22px;
+        }
+
         .member-card {
-            background-color: #ffffff;
-            border-radius: 20px;
-            padding: 20px 10px;
+            background: #FFFFFF;
+            border: 3px solid #1C3A56;
+            border-radius: 16px;
+            padding: 20px 12px;
             text-align: center;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
-            display: flex;
-            flex-direction: column;
-            align-items: center;
+            box-shadow: 5px 5px 0px #1C3A56;
+            transition: all 0.2s ease;
+            position: relative;
         }
 
-        .avatar-box {
-            width: 80px;
-            height: 80px;
+        /* Tạo độ nghiêng tự nhiên cho từng khung ảnh kiểu cắt dán */
+        .member-card:nth-child(odd) { transform: rotate(-1.5deg); }
+        .member-card:nth-child(even) { transform: rotate(1.5deg); }
+
+        .member-card:hover {
+            transform: scale(1.05) rotate(0deg);
+            box-shadow: 7px 7px 0px #1C3A56;
+            z-index: 10;
+        }
+
+        .member-avatar {
+            width: 85px;
+            height: 85px;
             border-radius: 50%;
+            background-color: #E6F1FA;
+            margin: 0 auto 12px auto;
             overflow: hidden;
-            border: 3px solid #e2e8f0;
-            margin-bottom: 12px;
-            background-color: #edf2f7;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+            border: 3px solid #1C3A56;
         }
 
-        .avatar-box img {
+        .member-avatar img {
             width: 100%;
             height: 100%;
             object-fit: cover;
         }
 
         .member-name {
-            font-size: 0.95rem;
-            font-weight: 600;
-            color: #2d3748;
+            font-family: 'Fredoka', cursive;
+            font-size: 1.1rem;
+            color: #1C3A56;
             margin-bottom: 12px;
-            height: 38px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
         }
 
         .btn-profile {
             display: inline-block;
-            background-color: #3b4d61;
-            color: #ffffff;
-            text-decoration: none;
-            font-size: 0.8rem;
-            padding: 6px 12px;
+            background-color: #5798D7; /* Color: Iced Denim */
+            color: #FFFFFF;
+            padding: 6px 14px;
             border-radius: 10px;
-            font-weight: 500;
-            transition: background-color 0.2s;
+            border: 2px solid #1C3A56;
+            text-decoration: none;
+            font-size: 0.85rem;
+            box-shadow: 2px 2px 0px #1C3A56;
+            transition: all 0.2s;
         }
 
         .btn-profile:hover {
-            background-color: #2b374e;
+            background-color: #B9C255;
+            color: #1C3A56;
         }
 
-        /* Khung Bài tập & Thuyết trình */
-        .content-box {
-            background-color: #e2ebc7;
-            border-radius: 18px;
-            padding: 25px;
-            margin-bottom: 25px;
-        }
-
-        .task-card {
-            background-color: #ffffff;
+        /* Thẻ Bài Tập & Thuyết Trình */
+        .card-box {
+            background: #FFFFFF;
+            border: 3px solid #1C3A56;
             border-radius: 16px;
-            padding: 20px;
-            margin-top: 15px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+            padding: 20px 25px;
+            margin-bottom: 20px;
+            box-shadow: 5px 5px 0px #1C3A56;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: transform 0.2s;
         }
 
-        .task-title {
-            font-size: 1.15rem;
-            font-weight: 700;
-            color: #2b374e;
-            margin-bottom: 8px;
+        .card-box:hover {
+            transform: translateY(-3px);
+            box-shadow: 7px 7px 0px #1C3A56;
         }
 
-        .task-desc {
-            font-size: 0.9rem;
-            color: #718096;
-            margin-bottom: 15px;
+        .card-info h3 {
+            font-size: 1.25rem;
+            color: #1C3A56;
+            margin-bottom: 4px;
         }
 
-        .btn-task {
-            display: inline-block;
-            background-color: #3b4d61;
-            color: #ffffff;
+        .card-info p {
+            color: #4A6572;
+            font-size: 0.95rem;
+            font-weight: 600;
+        }
+
+        .btn-action {
+            background-color: #B9C255; /* Color: Pistachio */
+            color: #1C3A56;
+            padding: 10px 20px;
+            border-radius: 12px;
+            border: 2.5px solid #1C3A56;
             text-decoration: none;
-            font-size: 0.85rem;
-            padding: 8px 16px;
-            border-radius: 8px;
-            font-weight: 500;
+            font-weight: 600;
+            font-size: 0.95rem;
+            box-shadow: 3px 3px 0px #1C3A56;
+            transition: all 0.2s;
+        }
+
+        .btn-action:hover {
+            background-color: #5798D7;
+            color: #FFFFFF;
+            transform: translate(-2px, -2px);
+            box-shadow: 5px 5px 0px #1C3A56;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 25px;
+            background-color: #FFFFFF;
+            color: #1C3A56;
+            font-weight: 600;
+            border-top: 3px solid #1C3A56;
+            margin-top: 40px;
         }
     </style>
 </head>
 <body>
 
-    <!-- PHẦN BANNER & THANH ĐIỀU HƯỚNG -->
-    <header class="hero-section">
-        <!-- Logo nhóm -->
-        <div class="group-logo">
-            <i class="fa-solid fa-laptop-code"></i>
+    <!-- Header & Navbar -->
+    <header>
+        <div class="nav-container">
+            <div class="logo-area">
+                <div class="logo-img">WB</div>
+                <div class="logo-text">World Bites</div>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#thanh-vien" class="nav-link">Thành viên</a></li>
+                    <li><a href="#bai-tap" class="nav-link">Bài tập</a></li>
+                    <li><a href="#thuyet-trinh" class="nav-link">Thuyết trình</a></li>
+                </ul>
+            </nav>
         </div>
-
-        <!-- Menu chuyển hướng -->
-        <nav class="nav-links">
-            <a href="#thanh-vien">Thành viên</a>
-            <a href="#bai-tap">Bài tập</a>
-            <a href="#thuyet-trinh">Thuyết trình</a>
-        </nav>
-
-        <!-- Tiêu đề chính -->
-        <h1 class="group-title">Nhóm 5 – Lớp 12</h1>
-        <p class="group-subtitle">Trang web tổng hợp bài tập & thuyết trình của nhóm</p>
     </header>
 
-    <!-- NỘI DUNG CHÍNH -->
-    <main class="container">
+    <!-- Banner Hero Scrapbook -->
+    <div class="hero">
+        <div class="hero-sticker">
+            <h1>WORLD BITES</h1>
+            <p>Trang web tổng hợp bài tập & thuyết trình môn Tin học 12</p>
+        </div>
+    </div>
 
-        <!-- DANH MỤC THÀNH VIÊN -->
+    <div class="container">
+
+        <!-- Danh mục Thành Viên (6 người) -->
         <section id="thanh-vien">
-            <h2 class="section-title">
-                <i class="fa-solid fa-users"></i> Thành viên nhóm
-            </h2>
-            
+            <h2 class="section-title">👥 Thành viên nhóm</h2>
             <div class="members-grid">
                 <!-- Thành viên 1 -->
                 <div class="member-card">
-                    <div class="avatar-box">
-                        <img src="https://via.placeholder.com/100" alt="Avatar">
+                    <div class="member-avatar">
+                        <img src="https://via.placeholder.com/150" alt="Avatar">
                     </div>
-                    <div class="member-name">Nguyễn Văn A</div>
+                    <div class="member-name">Thành viên 1</div>
                     <a href="#" class="btn-profile">Trang cá nhân</a>
                 </div>
-
                 <!-- Thành viên 2 -->
                 <div class="member-card">
-                    <div class="avatar-box">
-                        <img src="https://via.placeholder.com/100" alt="Avatar">
+                    <div class="member-avatar">
+                        <img src="https://via.placeholder.com/150" alt="Avatar">
                     </div>
-                    <div class="member-name">Trần Thị B</div>
+                    <div class="member-name">Thành viên 2</div>
                     <a href="#" class="btn-profile">Trang cá nhân</a>
                 </div>
-
                 <!-- Thành viên 3 -->
                 <div class="member-card">
-                    <div class="avatar-box">
-                        <img src="https://via.placeholder.com/100" alt="Avatar">
+                    <div class="member-avatar">
+                        <img src="https://via.placeholder.com/150" alt="Avatar">
                     </div>
-                    <div class="member-name">Lê Minh C</div>
+                    <div class="member-name">Thành viên 3</div>
                     <a href="#" class="btn-profile">Trang cá nhân</a>
                 </div>
-
                 <!-- Thành viên 4 -->
                 <div class="member-card">
-                    <div class="avatar-box">
-                        <img src="https://via.placeholder.com/100" alt="Avatar">
+                    <div class="member-avatar">
+                        <img src="https://via.placeholder.com/150" alt="Avatar">
                     </div>
-                    <div class="member-name">Phạm Hoàng D</div>
+                    <div class="member-name">Thành viên 4</div>
+                    <a href="#" class="btn-profile">Trang cá nhân</a>
+                </div>
+                <!-- Thành viên 5 -->
+                <div class="member-card">
+                    <div class="member-avatar">
+                        <img src="https://via.placeholder.com/150" alt="Avatar">
+                    </div>
+                    <div class="member-name">Thành viên 5</div>
+                    <a href="#" class="btn-profile">Trang cá nhân</a>
+                </div>
+                <!-- Thành viên 6 -->
+                <div class="member-card">
+                    <div class="member-avatar">
+                        <img src="https://via.placeholder.com/150" alt="Avatar">
+                    </div>
+                    <div class="member-name">Thành viên 6</div>
                     <a href="#" class="btn-profile">Trang cá nhân</a>
                 </div>
             </div>
         </section>
 
-        <!-- DANH MỤC BÀI TẬP -->
-        <section id="bai-tap" class="content-box">
-            <h2 class="section-title">
-                <i class="fa-solid fa-book"></i> CHỦ ĐỀ: Bài tập môn Tin học
-            </h2>
+        <!-- Danh mục Bài Tập -->
+        <section id="bai-tap">
+            <h2 class="section-title">📚 Bài tập thực hành</h2>
+            
+            <div class="card-box">
+                <div class="card-info">
+                    <h3>Bài 7: HTML và cấu trúc trang web</h3>
+                    <p>Bài tập thực hành tạo cấu trúc trang HTML cơ bản.</p>
+                </div>
+                <a href="#" class="btn-action">Xem bài làm</a>
+            </div>
 
-            <div class="task-card">
-                <div class="task-title">Bài 7: HTML và cấu trúc trang web</div>
-                <div class="task-desc">(Mô tả ngắn bài tập...)</div>
-                <a href="#" class="btn-task">Xem bài làm</a>
+            <div class="card-box">
+                <div class="card-info">
+                    <h3>Bài 8: Định dạng trang web với CSS</h3>
+                    <p>Bài tập áp dụng các thuộc tính CSS trang trí giao diện.</p>
+                </div>
+                <a href="#" class="btn-action">Xem bài làm</a>
             </div>
         </section>
 
-        <!-- DANH MỤC THUYẾT TRÌNH -->
-        <section id="thuyet-trinh" class="content-box">
-            <h2 class="section-title">
-                <i class="fa-solid fa-person-chalkboard"></i> Bài thuyết trình
-            </h2>
+        <!-- Danh mục Thuyết Trình -->
+        <section id="thuyet-trinh">
+            <h2 class="section-title">🎤 Bài thuyết trình</h2>
 
-            <div class="task-card">
-                <div class="task-title">Chủ đề 4: Giải quyết vấn đề với sự trợ giúp của máy tính</div>
-                <div class="task-desc">(Slide thuyết trình và bài báo cáo của nhóm...)</div>
-                <a href="#" class="btn-task">Xem bài thuyết trình</a>
+            <div class="card-box">
+                <div class="card-info">
+                    <h3>Chủ đề: Tổng quan về HTML & CSS</h3>
+                    <p>Slide thuyết trình của nhóm về thiết kế trang web.</p>
+                </div>
+                <a href="#" class="btn-action">Xem Slide</a>
             </div>
         </section>
 
-    </main>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>© World Bites - Bài tập thực hành Tin học 12</p>
+    </footer>
 
 </body>
 </html>
