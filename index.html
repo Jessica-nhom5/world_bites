@@ -4,11 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>World Bites - Trang Chủ Nhóm</title>
-    
-    <!-- Nhúng Font chữ hiển thị chuẩn Scrapbook / Hand-drawn -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Quicksand:wght@500;600;700&display=swap" rel="stylesheet">
 
     <style>
         * {
@@ -18,15 +13,11 @@
         }
 
         body {
-            font-family: 'Quicksand', sans-serif;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             background-color: #E6F1FA; /* Color: Frost */
             color: #1C3A56;
             line-height: 1.6;
             padding-bottom: 50px;
-        }
-
-        h1, h2, h3, .logo-text, .nav-link, .btn-action, .btn-profile {
-            font-family: 'Fredoka', cursive, sans-serif;
         }
 
         /* Navbar Scrapbook Style */
@@ -65,7 +56,7 @@
             justify-content: center;
             align-items: center;
             color: #1C3A56;
-            font-weight: 700;
+            font-weight: 800;
             font-size: 1.3rem;
             transform: rotate(-4deg);
             box-shadow: 3px 3px 0px #1C3A56;
@@ -73,7 +64,7 @@
 
         .logo-text {
             font-size: 1.4rem;
-            font-weight: 700;
+            font-weight: 800;
             color: #1C3A56;
             text-transform: uppercase;
             letter-spacing: 1px;
@@ -88,7 +79,7 @@
         .nav-link {
             text-decoration: none;
             color: #1C3A56;
-            font-weight: 600;
+            font-weight: 700;
             padding: 8px 16px;
             background-color: #E6F1FA;
             border: 2px solid #1C3A56;
@@ -110,8 +101,6 @@
             border-bottom: 4px solid #1C3A56;
             padding: 60px 20px;
             text-align: center;
-            position: relative;
-            overflow: hidden;
         }
 
         .hero-sticker {
@@ -121,7 +110,7 @@
             padding: 25px 40px;
             border-radius: 18px;
             box-shadow: 6px 6px 0px #1C3A56;
-            transform: rotate(-1.5deg);
+            transform: rotate(-1deg);
             max-width: 800px;
         }
 
@@ -131,15 +120,16 @@
             text-transform: uppercase;
             letter-spacing: 1px;
             margin-bottom: 8px;
+            font-weight: 900;
         }
 
         .hero p {
             font-size: 1.15rem;
             color: #1C3A56;
-            font-weight: 600;
+            font-weight: 700;
             background-color: #B9C255;
             display: inline-block;
-            padding: 4px 15px;
+            padding: 6px 16px;
             border-radius: 8px;
             border: 2px solid #1C3A56;
         }
@@ -158,7 +148,7 @@
         /* Tiêu đề mục nhãn Sticker */
         .section-title {
             display: inline-block;
-            font-size: 1.6rem;
+            font-size: 1.5rem;
             color: #1C3A56;
             background-color: #B9C255; /* Color: Pistachio */
             padding: 8px 22px;
@@ -168,6 +158,7 @@
             transform: rotate(-1deg);
             margin-bottom: 30px;
             text-transform: uppercase;
+            font-weight: 800;
         }
 
         /* Lưới Thành Viên (6 Thành viên) */
@@ -185,10 +176,8 @@
             text-align: center;
             box-shadow: 5px 5px 0px #1C3A56;
             transition: all 0.2s ease;
-            position: relative;
         }
 
-        /* Tạo độ nghiêng tự nhiên cho từng khung ảnh kiểu cắt dán */
         .member-card:nth-child(odd) { transform: rotate(-1.5deg); }
         .member-card:nth-child(even) { transform: rotate(1.5deg); }
 
@@ -215,10 +204,10 @@
         }
 
         .member-name {
-            font-family: 'Fredoka', cursive;
             font-size: 1.1rem;
             color: #1C3A56;
             margin-bottom: 12px;
+            font-weight: 800;
         }
 
         .btn-profile {
@@ -230,6 +219,7 @@
             border: 2px solid #1C3A56;
             text-decoration: none;
             font-size: 0.85rem;
+            font-weight: 700;
             box-shadow: 2px 2px 0px #1C3A56;
             transition: all 0.2s;
         }
@@ -259,9 +249,10 @@
         }
 
         .card-info h3 {
-            font-size: 1.25rem;
+            font-size: 1.2rem;
             color: #1C3A56;
             margin-bottom: 4px;
+            font-weight: 800;
         }
 
         .card-info p {
@@ -277,7 +268,7 @@
             border-radius: 12px;
             border: 2.5px solid #1C3A56;
             text-decoration: none;
-            font-weight: 600;
+            font-weight: 800;
             font-size: 0.95rem;
             box-shadow: 3px 3px 0px #1C3A56;
             transition: all 0.2s;
@@ -296,7 +287,7 @@
             padding: 25px;
             background-color: #FFFFFF;
             color: #1C3A56;
-            font-weight: 600;
+            font-weight: 700;
             border-top: 3px solid #1C3A56;
             margin-top: 40px;
         }
