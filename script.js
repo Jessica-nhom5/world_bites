@@ -1,11 +1,11 @@
 // Dữ liệu 6 thành viên với đúng tên và file avatar được yêu cầu
 const membersData = [
-    { name: "Đặng Hoài Triệu", avatar: "assets/avatars/625718942014541264.jpg", role: "Thành viên" },
-    { name: "Phan Nguyễn Như Phúc", avatar: "assets/avatars/star usagii 🌟.jpg", role: "Thành viên" },
-    { name: "Dương Phạm Ánh Ngân", avatar: "assets/avatars/805722189628617156.jpg", role: "Thành viên" },
-    { name: "Lê Huỳnh Khánh Ngọc", avatar: "assets/avatars/Sticker - Google Drive.jpg", role: "Thành viên" },
-    { name: "Dương Bảo Ngọc", avatar: "assets/avatars/Usagi (1).jpg", role: "Thành viên" },
-    { name: "Huỳnh Thanh Mai", avatar: "assets/avatars/usagi.jpg", role: "Thành viên" }
+    { name: "Đặng Hoài Triệu", avatar: "assets/trieu.jpg", role: "Thành viên" },
+    { name: "Phan Nguyễn Như Phúc", avatar: "assets/nphuc.jpg", role: "Thành viên" },
+    { name: "Dương Phạm Ánh Ngân", avatar: "assets/angan.jpg", role: "Thành viên" },
+    { name: "Lê Huỳnh Khánh Ngọc", avatar: "assets/lngoc.jpg", role: "Thành viên" },
+    { name: "Dương Bảo Ngọc", avatar: "assets/bngoc.jpg", role: "Thành viên" },
+    { name: "Huỳnh Thanh Mai", avatar: "assets/tmai.jpg", role: "Thành viên" }
 ];
 
 // Dữ liệu mẫu bài tập (Minh họa chuẩn Tin học 12)
