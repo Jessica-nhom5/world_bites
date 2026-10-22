@@ -10,15 +10,15 @@ const membersData = [
 
 // Dữ liệu mẫu bài tập (Minh họa chuẩn Tin học 12)
 const assignmentsData = [
-    { title: "Bài 7: HTML và cấu trúc trang web", topic: "HTML Cơ bản", description: "Xây dựng khung trang web chuẩn bằng các thẻ HTML cơ bản.", status: "Hoàn thành", statusClass: "status-done", author: "Nhóm thực hiện", link: "#" },
-    { title: "Bài 8: Định dạng trang web với CSS", topic: "CSS Styling", description: "Áp dụng thuộc tính màu sắc, font chữ và bố cục giao diện.", status: "Hoàn thành", statusClass: "status-done", author: "Nhóm thực hiện", link: "#" },
-    { title: "Bài 9: Mô hình Client - Server", topic: "Mạng máy tính", description: "Tìm hiểu kiến trúc mạng và cách hoạt động của trang web trực tuyến.", status: "Đang thực hiện", statusClass: "status-doing", author: "Nhóm thực hiện", link: "#" }
+    { title: "Bài 3: Một số thiết bị mạng thông dụng", topic: "Mạng máy tính & Internet", description: "Tìm hiểu về một số thiết bị mạng thông dụng.", status: "Hoàn thành", statusClass: "status-done", author: "Nhóm 5", link: "#" },
+    { title: "Bài 4: Giao thức mạng", topic: "Giao thức mạng", description: "Vai trò-chức năng của giao thức mạng & giao thức IP/TCP.", status: "Hoàn thành", statusClass: "status-done", author: "Nhóm 5", link: "#" },
+    { title: "Bài 5: Thực hành chia sẻ tài nguyên trên mạng", topic: "Chia sẻ tài nguyên mạng", description: "Chia sẻ tệp và thư mục trên mạng cục bộ.", status: "Đang thực hiện", statusClass: "status-doing", author: "Nhóm 5", link: "#" }
 ];
 
 // Dữ liệu mẫu bài thuyết trình
 const presentationsData = [
-    { title: "Chủ đề 1: Tổng quan về thiết kế web", topic: "UI/UX & HTML", description: "Slide báo cáo tổng quan về cấu trúc website học tập và định hướng phong cách Y2K.", status: "Đã trình bày", statusClass: "status-done", author: "PIXEL CLUB", link: "#" },
-    { title: "Chủ đề 2: Xu hướng công nghệ số & AI", topic: "Công nghệ 12", description: "Thuyết trình về ứng dụng trí tuệ nhân tạo trong học tập và đời sống hiện đại.", status: "Đang chuẩn bị", statusClass: "status-doing", author: "PIXEL CLUB", link: "#" }
+    { title: "Chủ đề 1: ?", topic: "???", description: "Yarsh", status: "Đã trình bày", statusClass: "status-done", author: "CBT's Fairy", link: "#" },
+    { title: "Chủ đề 2: ?", topic: "???", description: "Yarsh", status: "Đang chuẩn bị", statusClass: "status-doing", author: "CBT's Fairy", link: "#" }
 ];
 
 document.addEventListener("DOMContentLoaded", () => {
