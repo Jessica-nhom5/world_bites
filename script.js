@@ -10,7 +10,7 @@ const membersData = [
 
 // Dữ liệu mẫu bài tập (Minh họa chuẩn Tin học 12)
 const assignmentsData = [
-    { title: "Bài 3: Một số thiết bị mạng thông dụng", topic: "Mạng máy tính & Internet", description: "Tìm hiểu về một số thiết bị mạng thông dụng.", status: "Hoàn thành", statusClass: "status-done", author: "Nhóm 5", link: "#" },
+    { title: "Bài 3: Một số thiết bị mạng thông dụng", topic: "Mạng máy tính & Internet", description: "Tìm hiểu về một số thiết bị mạng thông dụng.", status: "Hoàn thành", statusClass: "status-done", author: "Nhóm 5", link: "Bai3.html" },
     { title: "Bài 4: Giao thức mạng", topic: "Giao thức mạng", description: "Vai trò-chức năng của giao thức mạng & giao thức IP/TCP.", status: "Hoàn thành", statusClass: "status-done", author: "Nhóm 5", link: "#" },
     { title: "Bài 5: Thực hành chia sẻ tài nguyên trên mạng", topic: "Chia sẻ tài nguyên mạng", description: "Chia sẻ tệp và thư mục trên mạng cục bộ.", status: "Đang thực hiện", statusClass: "status-doing", author: "Nhóm 5", link: "#" }
 ];
