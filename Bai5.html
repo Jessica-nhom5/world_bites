@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bài 5: Thực hành chia sẻ mạng - PIXEL CLUB</title>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323&family=Quicksand:wght@500;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --ocean-blue: #00a0b5;
+            --banana: #ffef5a;
+            --avocado: #98c54e;
+            --bell-pepper: #14704f;
+            --bubblegum: #f478b0;
+            --bg-color: #e2f8ff;
+            --card-bg: #ffffff;
+            --text-color: #14704f;
+            --border-retro: 3px solid #14704f;
+            --shadow-retro: 4px 4px 0px #14704f;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Quicksand', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.7;
+            padding-bottom: 40px;
+        }
+
+        /* Checkerboard Bar */
+        .checkerboard-bar {
+            height: 12px;
+            background: repeating-linear-gradient(
+                45deg,
+                var(--bell-pepper),
+                var(--bell-pepper) 10px,
+                var(--banana) 10px,
+                var(--banana) 20px
+            );
+            border-bottom: 2px solid var(--bell-pepper);
+        }
+
+        /* Header */
+        .pixel-header {
+            background-color: var(--card-bg);
+            border-bottom: var(--border-retro);
+            box-shadow: 0 4px 0px rgba(20, 112, 79, 0.2);
+            padding: 20px;
+            text-align: center;
+        }
+
+        .back-link {
+            display: inline-block;
+            font-family: 'VT323', monospace;
+            font-size: 1.2rem;
+            background-color: var(--banana);
+            color: var(--bell-pepper);
+            padding: 5px 15px;
+            border: 2px solid var(--bell-pepper);
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 700;
+            margin-bottom: 15px;
+            box-shadow: 2px 2px 0px var(--bell-pepper);
+            transition: transform 0.1s;
+        }
+
+        .back-link:hover {
+            transform: translate(-2px, -2px);
+            box-shadow: 4px 4px 0px var(--bell-pepper);
+            background-color: var(--avocado);
+            color: #fff;
+        }
+
+        .pixel-header h1 {
+            font-family: 'Press Start 2P', monospace;
+            font-size: 1.1rem;
+            color: var(--bell-pepper);
+            margin-bottom: 8px;
+        }
+
+        .mandatory-quote {
+            font-weight: 700;
+            font-size: 0.95rem;
+            color: var(--ocean-blue);
+            background-color: var(--banana);
+            display: inline-block;
+            padding: 4px 12px;
+            border: 2px solid var(--bell-pepper);
+            border-radius: 8px;
+        }
+
+        /* Container */
+        .container {
+            max-width: 900px;
+            margin: 30px auto;
+            padding: 0 20px;
+        }
+
+        /* Retro Window Box */
+        .retro-window {
+            background-color: var(--card-bg);
+            border: var(--border-retro);
+            box-shadow: var(--shadow-retro);
+            border-radius: 12px;
+            margin-bottom: 30px;
+            overflow: hidden;
+        }
+
+        .retro-window-header {
+            background-color: var(--ocean-blue);
+            padding: 8px 12px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: var(--border-retro);
+        }
+
+        .window-title {
+            font-family: 'VT323', monospace;
+            color: #fff;
+            font-size: 1.1rem;
+        }
+
+        .window-body {
+            padding: 25px;
+        }
+
+        h2.exercise-title {
+            font-family: 'VT323', monospace;
+            font-size: 1.8rem;
+            color: #fff;
+            background-color: var(--avocado);
+            padding: 8px 15px;
+            border: var(--border-retro);
+            border-radius: 8px;
+            margin-bottom: 20px;
+            box-shadow: 3px 3px 0px var(--bell-pepper);
+        }
+
+        h3.question-text {
+            font-size: 1.05rem;
+            color: var(--bell-pepper);
+            margin-bottom: 15px;
+            font-weight: 700;
+            background-color: var(--banana);
+            padding: 10px 15px;
+            border: 2px solid var(--bell-pepper);
+            border-radius: 6px;
+        }
+
+        ul.answer-list {
+            list-style-type: none;
+            padding-left: 0;
+        }
+
+        ul.answer-list li {
+            margin-bottom: 12px;
+            padding: 12px 15px;
+            background-color: #f9fefb;
+            border: 2px solid var(--bell-pepper);
+            border-radius: 8px;
+            box-shadow: 2px 2px 0px rgba(20, 112, 79, 0.15);
+        }
+
+        ul.answer-list li strong {
+            color: var(--ocean-blue);
+        }
+
+        /* Footer */
+        .pixel-footer {
+            text-align: center;
+            margin-top: 50px;
+            background-color: var(--card-bg);
+            border-top: var(--border-retro);
+            padding: 20px;
+        }
+
+        .pixel-footer p {
+            font-size: 0.9rem;
+            color: var(--bell-pepper);
+            font-weight: 700;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header class="pixel-header">
+        <div class="checkerboard-bar"></div>
+        <br>
+        <a href="index.html" class="back-link">⬅ Quay lại Trang chủ</a>
+        <h1>BÀI 5: THỰC HÀNH CHIA SẺ TỆP VÀ THƯ MỤC TRÊN MẠNG</h1>
+        <p class="mandatory-quote">Trang web tổng hợp bài tập & thuyết trình môn Tin học 12</p>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container">
+
+        <!-- Luyện tập 1 -->
+        <div class="retro-window">
+            <div class="retro-window-header">
+                <span class="window-title">bai_5_thuc_hanh.txt</span>
+            </div>
+            <div class="window-body">
+                <h2 class="exercise-title">📌 LUYỆN TẬP 1</h2>
+                <h3 class="question-text">Quy trình thực hiện các bước theo yêu cầu thực hành chia sẻ tệp và thư mục:</h3>
+                <ul class="answer-list">
+                    <li><strong>1. Lập các nhóm thực hành:</strong>
+                        <br>• <strong>Nhóm 1:</strong> Máy A1 và Máy B1
+                        <br>• <strong>Nhóm 2:</strong> Máy A2 và Máy B2
+                    </li>
+                    <li><strong>2. Thực hiện nội dung thực hành chi tiết:</strong></li>
+                    <li><strong>a) Máy A chia sẻ tệp và thư mục với quyền Read (Chỉ đọc):</strong>
+                        <br>• <em>Trên Máy A1:</em> Tạo một thư mục và thêm vào ít nhất một tệp văn bản. Thiết lập chia sẻ thư mục với quyền Read.
+                        <br>• <em>Trên Máy B1:</em> Kết nối đến máy A1 và truy cập vào thư mục chia sẻ. Kiểm tra xem các tệp có thể đọc được nhưng không thể chỉnh sửa hay lưu đè được.
+                    </li>
+                    <li><strong>b) Máy A thiết lập lại chế độ chia sẻ với quyền Read/Write (Đọc và Ghi):</strong>
+                        <br>• <em>Trên Máy A1:</em> Chỉnh sửa cài đặt chia sẻ của thư mục để cung cấp quyền Read/Write.
+                        <br>• <em>Trên Máy B1:</em> Kiểm tra lại việc sử dụng các tệp chia sẻ để thấy người dùng có thể đọc và đồng thời sửa được tệp.
+                    </li>
+                    <li><strong>c) Máy A hủy bỏ chia sẻ (Stop Sharing):</strong>
+                        <br>• <em>Trên Máy A1:</em> Thực hiện thao tác hủy bỏ chia sẻ thư mục.
+                        <br>• <em>Trên Máy B1:</em> Truy cập kiểm tra để thấy rằng thư mục không còn được chia sẻ trên mạng nữa.
+                    </li>
+                    <li><strong>d) Đảo vai trò thực hiện:</strong>
+                        <br>• Thực hiện quy trình tương tự như trên nhưng hoán đổi vai trò: Lần này <strong>Máy B2</strong> sẽ chia sẻ tệp/thư mục và <strong>Máy A2</strong> sẽ là người kết nối và kiểm tra.
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="pixel-footer">
+        <div class="checkerboard-bar"></div>
+        <br>
+        <p>Trang web tổng hợp bài tập & thuyết trình môn Tin học 12</p>
+        <p>© 2026 PIXEL CLUB. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>
