@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bài 3: Luyện tập & Vận dụng - PIXEL CLUB</title>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323&family=Quicksand:wght@500;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --ocean-blue: #00a0b5;
+            --banana: #ffef5a;
+            --avocado: #98c54e;
+            --bell-pepper: #14704f;
+            --bubblegum: #f478b0;
+            --bg-color: #e2f8ff;
+            --card-bg: #ffffff;
+            --text-color: #14704f;
+            --border-retro: 3px solid #14704f;
+            --shadow-retro: 4px 4px 0px #14704f;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Quicksand', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.7;
+            padding-bottom: 40px;
+        }
+
+        /* Checkerboard Bar */
+        .checkerboard-bar {
+            height: 12px;
+            background: repeating-linear-gradient(
+                45deg,
+                var(--bell-pepper),
+                var(--bell-pepper) 10px,
+                var(--banana) 10px,
+                var(--banana) 20px
+            );
+            border-bottom: 2px solid var(--bell-pepper);
+        }
+
+        /* Header */
+        .pixel-header {
+            background-color: var(--card-bg);
+            border-bottom: var(--border-retro);
+            box-shadow: 0 4px 0px rgba(20, 112, 79, 0.2);
+            padding: 20px;
+            text-align: center;
+        }
+
+        .back-link {
+            display: inline-block;
+            font-family: 'VT323', monospace;
+            font-size: 1.2rem;
+            background-color: var(--banana);
+            color: var(--bell-pepper);
+            padding: 5px 15px;
+            border: 2px solid var(--bell-pepper);
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 700;
+            margin-bottom: 15px;
+            box-shadow: 2px 2px 0px var(--bell-pepper);
+            transition: transform 0.1s;
+        }
+
+        .back-link:hover {
+            transform: translate(-2px, -2px);
+            box-shadow: 4px 4px 0px var(--bell-pepper);
+            background-color: var(--avocado);
+            color: #fff;
+        }
+
+        .pixel-header h1 {
+            font-family: 'Press Start 2P', monospace;
+            font-size: 1.4rem;
+            color: var(--bell-pepper);
+            margin-bottom: 8px;
+        }
+
+        .mandatory-quote {
+            font-weight: 700;
+            font-size: 0.95rem;
+            color: var(--ocean-blue);
+            background-color: var(--banana);
+            display: inline-block;
+            padding: 4px 12px;
+            border: 2px solid var(--bell-pepper);
+            border-radius: 8px;
+        }
+
+        /* Container */
+        .container {
+            max-width: 900px;
+            margin: 30px auto;
+            padding: 0 20px;
+        }
+
+        /* Retro Window Box */
+        .retro-window {
+            background-color: var(--card-bg);
+            border: var(--border-retro);
+            box-shadow: var(--shadow-retro);
+            border-radius: 12px;
+            margin-bottom: 30px;
+            overflow: hidden;
+        }
+
+        .retro-window-header {
+            background-color: var(--ocean-blue);
+            padding: 8px 12px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: var(--border-retro);
+        }
+
+        .window-title {
+            font-family: 'VT323', monospace;
+            color: #fff;
+            font-size: 1.1rem;
+        }
+
+        .window-body {
+            padding: 25px;
+        }
+
+        h2.exercise-title {
+            font-family: 'VT323', monospace;
+            font-size: 1.8rem;
+            color: #fff;
+            background-color: var(--avocado);
+            padding: 8px 15px;
+            border: var(--border-retro);
+            border-radius: 8px;
+            margin-bottom: 20px;
+            box-shadow: 3px 3px 0px var(--bell-pepper);
+        }
+
+        h3.question-text {
+            font-size: 1.1rem;
+            color: var(--bell-pepper);
+            margin-bottom: 15px;
+            font-weight: 700;
+            background-color: var(--banana);
+            padding: 10px 15px;
+            border: 2px solid var(--bell-pepper);
+            border-radius: 6px;
+        }
+
+        ul.answer-list {
+            list-style-type: none;
+            padding-left: 0;
+        }
+
+        ul.answer-list li {
+            margin-bottom: 12px;
+            padding: 12px 15px;
+            background-color: #f9fefb;
+            border: 2px solid var(--bell-pepper);
+            border-radius: 8px;
+            box-shadow: 2px 2px 0px rgba(20, 112, 79, 0.15);
+        }
+
+        ul.answer-list li strong {
+            color: var(--ocean-blue);
+        }
+
+        /* Footer */
+        .pixel-footer {
+            text-align: center;
+            margin-top: 50px;
+            background-color: var(--card-bg);
+            border-top: var(--border-retro);
+            padding: 20px;
+        }
+
+        .pixel-footer p {
+            font-size: 0.9rem;
+            color: var(--bell-pepper);
+            font-weight: 700;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header class="pixel-header">
+        <div class="checkerboard-bar"></div>
+        <br>
+        <a href="index.html" class="back-link">⬅ Quay lại Trang chủ</a>
+        <h1>BÀI 3: MỘT SỐ THIẾT BỊ MẠNG THÔNG DỤNG</h1>
+        <p class="mandatory-quote">Trang web tổng hợp bài tập & thuyết trình môn Tin học 12</p>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container">
+
+        <!-- Luyện tập 1 -->
+        <div class="retro-window">
+            <div class="retro-window-header">
+                <span class="window-title">luyen_tap_1.txt</span>
+            </div>
+            <div class="window-body">
+                <h2 class="exercise-title">📌 LUYỆN TẬP 1</h2>
+                <h3 class="question-text">Muốn kết nối các máy tính trong phạm vi gia đình thành một mạng, nên dùng loại thiết bị kết nối nào?</h3>
+                <ul class="answer-list">
+                    <li><strong>Router Wi-Fi (Bộ định tuyến không dây):</strong> Đây là thiết bị phổ biến nhất để tạo mạng gia đình. Router có chức năng định tuyến dữ liệu và kết nối Internet. Nó vừa phát sóng Wi-Fi cho các thiết bị di động, vừa tích hợp các cổng Ethernet để cắm cáp mạng cho máy tính để bàn.</li>
+                    <li><strong>Switch (Bộ chuyển mạch):</strong> Đóng vai trò là thiết bị trung tâm kết nối các máy tính trong mạng có dây. Chúng ta sẽ dùng thêm Switch để mở rộng số lượng cổng Ethernet khi Router không có đủ cổng kết nối.</li>
+                    <li><strong>Powerline (Thiết bị truyền mạng qua đường điện):</strong> Thay vì phải đi cáp Ethernet phức tạp qua các phòng, thiết bị này sử dụng chính hệ thống dây điện dân dụng trong nhà để truyền tải tín hiệu mạng, giúp việc mở rộng mạng LAN tiện lợi và thẩm mỹ hơn.</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Luyện tập 2 -->
+        <div class="retro-window">
+            <div class="retro-window-header">
+                <span class="window-title">luyen_tap_2.txt</span>
+            </div>
+            <div class="window-body">
+                <h2 class="exercise-title">📌 LUYỆN TẬP 2</h2>
+                <h3 class="question-text">Máy tính xách tay thường có khả năng kết nối wi-fi nhưng không có SIM để kết nối với Internet. Làm thế nào để kết nối máy tính xách tay với internet thông qua mạng điện thoại di động?</h3>
+                <ul class="answer-list">
+                    <li><strong>Sử dụng điện thoại di động để phát wifi:</strong></li>
+                    <li><strong>Bước 1 - Bật dữ liệu di động trên điện thoại:</strong> Mở phần Cài đặt (hoặc trung tâm điều khiển) rồi bật Dữ liệu di động (3G/4G/5G).</li>
+                    <li><strong>Bước 2 - Kích hoạt điểm phát Wifi:</strong> 
+                        <br>• <em>Với iPhone:</em> Vào Cài đặt ➔ Điểm truy cập cá nhân ➔ Bật Cho phép người khác tham gia (có thể thay đổi mật khẩu tại đây).
+                        <br>• <em>Với Android:</em> Vào Cài đặt ➔ Kết nối (hoặc Mạng & Internet) ➔ Điểm truy cập cá nhân & chia sẻ mạng ➔ Bật Điểm phát sóng Wi-Fi.
+                    </li>
+                    <li><strong>Bước 3 - Kết nối trên máy tính:</strong> Trên máy tính xách tay, mở danh sách mạng Wifi ➔ Chọn tên Wifi của điện thoại ➔ Nhập mật khẩu và ấn Connect.</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Vận dụng 1 -->
+        <div class="retro-window">
+            <div class="retro-window-header">
+                <span class="window-title">van_dung_1.txt</span>
+            </div>
+            <div class="window-body">
+                <h2 class="exercise-title">🚀 VẬN DỤNG 1</h2>
+                <h3 class="question-text">Với sự giúp đỡ của thầy cô giáo hãy tìm hiểu xem mạng máy tính của trường em sử dụng các hub, switch, WAP và router như thế nào. Hãy vẽ lại sơ đồ mạng của trường?</h3>
+                <ul class="answer-list">
+                    <li><strong>Gợi ý thực hiện:</strong> Học sinh liên hệ với giáo viên bộ môn Tin học hoặc quản trị viên hệ thống mạng tại trường (Trường THPT) để quan sát thực tế vị trí đặt thiết bị, sau đó vẽ sơ đồ mạng (có thể dùng phần mềm vẽ sơ đồ như Draw.io hoặc vẽ tay rồi chụp lại đưa vào báo cáo).</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Vận dụng 2 -->
+        <div class="retro-window">
+            <div class="retro-window-header">
+                <span class="window-title">van_dung_2.txt</span>
+            </div>
+            <div class="window-body">
+                <h2 class="exercise-title">🚀 VẬN DỤNG 2</h2>
+                <h3 class="question-text">Trên các xe khách đường dài ngày nay hành khách có thể truy cập internet thông qua wi-fi được không hãy tìm hiểu xem điều này được thực hiện như thế nào?</h3>
+                <ul class="answer-list">
+                    <li><strong>1. Modem/Router 4G hoặc 5G:</strong> Router được lắp trực tiếp trên xe và sử dụng SIM của nhà mạng để kết nối Internet thông qua mạng di động tế bào.</li>
+                    <li><strong>2. Anten thu sóng:</strong> Thường được đặt ở vị trí phù hợp trên xe, giúp router nhận tín hiệu 4G/5G ổn định từ các trạm phát sóng nhà mạng khi xe di chuyển trên đường dài.</li>
+                    <li><strong>3. Router phát Wifi trên xe:</strong> Chuyển đổi kết nối Internet di động thu được thành một mạng Wifi cục bộ bên trong xe.</li>
+                    <li><strong>4. Trải nghiệm của hành khách:</strong> Hành khách chỉ cần bật Wifi trên thiết bị cá nhân, chọn tên mạng của xe, nhập mật khẩu (nếu có) và kết nối để lướt web, xem phim.</li>
+                </ul>
+            </div>
+        </div>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="pixel-footer">
+        <div class="checkerboard-bar"></div>
+        <br>
+        <p>Trang web tổng hợp bài tập & thuyết trình môn Tin học 12</p>
+        <p>© 2026 PIXEL CLUB. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>
