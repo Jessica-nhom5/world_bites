@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bài 4: Luyện tập & Vận dụng - PIXEL CLUB</title>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323&family=Quicksand:wght@500;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --ocean-blue: #00a0b5;
+            --banana: #ffef5a;
+            --avocado: #98c54e;
+            --bell-pepper: #14704f;
+            --bubblegum: #f478b0;
+            --bg-color: #e2f8ff;
+            --card-bg: #ffffff;
+            --text-color: #14704f;
+            --border-retro: 3px solid #14704f;
+            --shadow-retro: 4px 4px 0px #14704f;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Quicksand', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.7;
+            padding-bottom: 40px;
+        }
+
+        /* Checkerboard Bar */
+        .checkerboard-bar {
+            height: 12px;
+            background: repeating-linear-gradient(
+                45deg,
+                var(--bell-pepper),
+                var(--bell-pepper) 10px,
+                var(--banana) 10px,
+                var(--banana) 20px
+            );
+            border-bottom: 2px solid var(--bell-pepper);
+        }
+
+        /* Header */
+        .pixel-header {
+            background-color: var(--card-bg);
+            border-bottom: var(--border-retro);
+            box-shadow: 0 4px 0px rgba(20, 112, 79, 0.2);
+            padding: 20px;
+            text-align: center;
+        }
+
+        .back-link {
+            display: inline-block;
+            font-family: 'VT323', monospace;
+            font-size: 1.2rem;
+            background-color: var(--banana);
+            color: var(--bell-pepper);
+            padding: 5px 15px;
+            border: 2px solid var(--bell-pepper);
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 700;
+            margin-bottom: 15px;
+            box-shadow: 2px 2px 0px var(--bell-pepper);
+            transition: transform 0.1s;
+        }
+
+        .back-link:hover {
+            transform: translate(-2px, -2px);
+            box-shadow: 4px 4px 0px var(--bell-pepper);
+            background-color: var(--avocado);
+            color: #fff;
+        }
+
+        .pixel-header h1 {
+            font-family: 'Press Start 2P', monospace;
+            font-size: 1.3rem;
+            color: var(--bell-pepper);
+            margin-bottom: 8px;
+        }
+
+        .mandatory-quote {
+            font-weight: 700;
+            font-size: 0.95rem;
+            color: var(--ocean-blue);
+            background-color: var(--banana);
+            display: inline-block;
+            padding: 4px 12px;
+            border: 2px solid var(--bell-pepper);
+            border-radius: 8px;
+        }
+
+        /* Container */
+        .container {
+            max-width: 900px;
+            margin: 30px auto;
+            padding: 0 20px;
+        }
+
+        /* Retro Window Box */
+        .retro-window {
+            background-color: var(--card-bg);
+            border: var(--border-retro);
+            box-shadow: var(--shadow-retro);
+            border-radius: 12px;
+            margin-bottom: 30px;
+            overflow: hidden;
+        }
+
+        .retro-window-header {
+            background-color: var(--ocean-blue);
+            padding: 8px 12px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: var(--border-retro);
+        }
+
+        .window-title {
+            font-family: 'VT323', monospace;
+            color: #fff;
+            font-size: 1.1rem;
+        }
+
+        .window-body {
+            padding: 25px;
+        }
+
+        h2.exercise-title {
+            font-family: 'VT323', monospace;
+            font-size: 1.8rem;
+            color: #fff;
+            background-color: var(--avocado);
+            padding: 8px 15px;
+            border: var(--border-retro);
+            border-radius: 8px;
+            margin-bottom: 20px;
+            box-shadow: 3px 3px 0px var(--bell-pepper);
+        }
+
+        h3.question-text {
+            font-size: 1.05rem;
+            color: var(--bell-pepper);
+            margin-bottom: 15px;
+            font-weight: 700;
+            background-color: var(--banana);
+            padding: 10px 15px;
+            border: 2px solid var(--bell-pepper);
+            border-radius: 6px;
+        }
+
+        ul.answer-list {
+            list-style-type: none;
+            padding-left: 0;
+        }
+
+        ul.answer-list li {
+            margin-bottom: 12px;
+            padding: 12px 15px;
+            background-color: #f9fefb;
+            border: 2px solid var(--bell-pepper);
+            border-radius: 8px;
+            box-shadow: 2px 2px 0px rgba(20, 112, 79, 0.15);
+        }
+
+        ul.answer-list li strong {
+            color: var(--ocean-blue);
+        }
+
+        code-block {
+            display: block;
+            background-color: #14704f;
+            color: #ffef5a;
+            padding: 10px 15px;
+            border-radius: 6px;
+            font-family: monospace;
+            margin-top: 8px;
+            border: 2px solid #00a0b5;
+        }
+
+        /* Footer */
+        .pixel-footer {
+            text-align: center;
+            margin-top: 50px;
+            background-color: var(--card-bg);
+            border-top: var(--border-retro);
+            padding: 20px;
+        }
+
+        .pixel-footer p {
+            font-size: 0.9rem;
+            color: var(--bell-pepper);
+            font-weight: 700;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header class="pixel-header">
+        <div class="checkerboard-bar"></div>
+        <br>
+        <a href="index.html" class="back-link">⬅ Quay lại Trang chủ</a>
+        <h1>BÀI 4: GIAO THỨC MẠNG VÀ TÊN MIỀN</h1>
+        <p class="mandatory-quote">Trang web tổng hợp bài tập & thuyết trình môn Tin học 12</p>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container">
+
+        <!-- Luyện tập 1 -->
+        <div class="retro-window">
+            <div class="retro-window-header">
+                <span class="window-title">luyen_tap_1.txt</span>
+            </div>
+            <div class="window-body">
+                <h2 class="exercise-title">📌 LUYỆN TẬP 1</h2>
+                <h3 class="question-text">Hãy quan sát việc gọi điện thoại bằng máy bàn. Những hành động và sự kiện xảy ra khi gọi điện thoại như nhấc ống nghe, quay số, phát nhạc chờ, reo chuông, báo lỗi, nói chuyện, kết thúc cuộc gọi đều phải theo một quy tắc chặt chẽ. Hãy kể ra các quy tắc đó để làm rõ giao thức gọi điện thoại.</h3>
+                <ul class="answer-list">
+                    <li><strong>Quy trình & Quy tắc gọi điện thoại bằng máy bàn:</strong></li>
+                    <li><strong>Nhấc ống nghe:</strong> Gửi tín hiệu điện đến trung tâm chuyển mạch để báo hiệu bắt đầu phiên giao dịch.</li>
+                    <li><strong>Quay số (Bấm phím):</strong> Nhập dãy số định danh (số điện thoại) của thiết bị đầu cuối cần liên lạc.</li>
+                    <li><strong>Chờ kết nối:</strong> Lắng nghe tín hiệu âm thanh chờ hoặc thông báo trạng thái từ hệ thống tổng đài.</li>
+                    <li><strong>Nhận cuộc gọi:</strong> Máy đích nhận tín hiệu reo chuông và người nhận nhấc ống nghe để thiết lập kênh truyền thông tin hai chiều.</li>
+                    <li><strong>Nói chuyện:</strong> Hai bên trao đổi thông tin thoại tuân thủ cơ chế truyền dữ liệu qua lại.</li>
+                    <li><strong>Kết thúc:</strong> Đặt ống nghe về vị trí ban đầu để giải phóng kênh truyền và kết thúc phiên kết nối.</li>
+                    <li><strong>Báo lỗi:</strong> Hệ thống phát tín hiệu cảnh báo đặc trưng khi cuộc gọi gặp sự cố (số máy bận, sai số hoặc mất kết nối).</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Luyện tập 2 -->
+        <div class="retro-window">
+            <div class="retro-window-header">
+                <span class="window-title">luyen_tap_2.txt</span>
+            </div>
+            <div class="window-body">
+                <h2 class="exercise-title">📌 LUYỆN TẬP 2</h2>
+                <h3 class="question-text">Xác định địa chỉ IP tương ứng ở dạng thập phân và dạng nhị phân.</h3>
+                <ul class="answer-list">
+                    <li><strong>Lưu ý:</strong> Học sinh thực hành đối chiếu và chuyển đổi giữa hệ đếm thập phân (IPv4) sang dãy 32 bít nhị phân theo hướng dẫn của giáo viên trên lớp.</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Vận dụng 1 -->
+        <div class="retro-window">
+            <div class="retro-window-header">
+                <span class="window-title">van_dung_1.txt</span>
+            </div>
+            <div class="window-body">
+                <h2 class="exercise-title">🚀 VẬN DỤNG 1</h2>
+                <h3 class="question-text">Hãy tìm hiểu giao thức tên miền DNS theo các gợi ý: Lợi ích của việc dùng tên miền thay thế cho địa chỉ IP, các lớp tên miền, tổ chức phụ trách tại Việt Nam.</h3>
+                <ul class="answer-list">
+                    <li><strong>1. Lợi ích của tên miền so với địa chỉ IP:</strong>
+                        <br>• <strong>Dễ nhớ:</strong> Tên dạng ký tự dễ ghi nhớ và thân thiện với con người hơn dãy số IP phức tạp.
+                        <br>• <strong>Phân cấp:</strong> Dễ dàng tổ chức, phân loại và quản lý hệ thống quy mô lớn.
+                        <br>• <strong>Linh hoạt:</strong> Khi thay đổi địa chỉ IP máy chủ, người dùng vẫn truy cập bình thường qua tên miền cũ mà không cần sửa mọi địa chỉ tham chiếu.
+                    </li>
+                    <li><strong>2. Các lớp tên miền (Domain Hierarchy):</strong>
+                        <br>• <strong>TLD (Top-Level Domain):</strong> Tên miền cấp cao nhất, ví dụ: <code>.com</code>, <code>.vn</code>, <code>.org</code>.
+                        <br>• <strong>SLD (Second-Level Domain):</strong> Tên miền cấp hai, ví dụ: chữ <code>example</code> trong <code>example.com</code>.
+                        <br>• <strong>Subdomain:</strong> Tên miền phụ, ví dụ: <code>blog.example.com</code>.
+                    </li>
+                    <li><strong>3. Tổ chức quản lý tên miền Việt Nam:</strong>
+                        <br>• <strong>Trung tâm Internet Việt Nam (VNNIC):</strong> Trực thuộc Bộ Thông tin và Truyền thông, chịu trách nhiệm quản lý và phân bổ tài nguyên Internet, tên miền quốc gia <code>.vn</code>.
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Vận dụng 2 -->
+        <div class="retro-window">
+            <div class="retro-window-header">
+                <span class="window-title">van_dung_2.txt</span>
+            </div>
+            <div class="window-body">
+                <h2 class="exercise-title">🚀 VẬN DỤNG 2</h2>
+                <h3 class="question-text">Giao thức ICMP (Internet Control Message Protocol) và lệnh Ping trong hệ điều hành giúp kiểm tra kết nối mạng.</h3>
+                <ul class="answer-list">
+                    <li><strong>Khái niệm lệnh Ping:</strong> Là công cụ kiểm tra kết nối mạng giữa hai thiết bị bằng cách gửi các gói tin <em>ICMP Echo Request</em> và chờ đợi gói tin <em>ICMP Echo Reply</em> phản hồi từ thiết bị đích.</li>
+                    <li><strong>Độ trễ Ping (Ping latency):</strong> Là thời gian gói tin đi từ máy gửi đến máy nhận rồi quay lại, tính bằng mili giây (ms).</li>
+                    <li><strong>Cách thực hiện trên Windows hoặc Linux:</strong>
+                        <br>Mở cửa sổ dòng lệnh (Terminal/Command Prompt) và nhập cú pháp:
+                        <br><code style="display:inline-block; background:#14704f; color:#ffef5a; padding:6px 10px; border-radius:4px; margin-top:5px;">ping [địa chỉ IP hoặc tên miền]</code>
+                        <br><em>Ví dụ thực tế:</em> <code>ping www.google.com</code>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="pixel-footer">
+        <div class="checkerboard-bar"></div>
+        <br>
+        <p>Trang web tổng hợp bài tập & thuyết trình môn Tin học 12</p>
+        <p>© 2026 PIXEL CLUB. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>
