@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bài 6: Giao tiếp trong không gian mạng - PIXEL CLUB</title>
+    <link href="https://fonts.googleapis.com/css2?family=VT323&family=Quicksand:wght@500;700;900&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --ocean-blue: #00a0b5;
+            --banana: #ffef5a;
+            --avocado: #98c54e;
+            --bell-pepper: #14704f;
+            --bubblegum: #f478b0;
+            --bg-color: #e2f8ff;
+            --card-bg: #ffffff;
+            --text-color: #14704f;
+            --border-retro: 3px solid #14704f;
+            --shadow-retro: 4px 4px 0px #14704f;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Quicksand', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.7;
+            padding-bottom: 40px;
+        }
+
+        /* Checkerboard Bar */
+        .checkerboard-bar {
+            height: 12px;
+            background: repeating-linear-gradient(
+                45deg,
+                var(--bell-pepper),
+                var(--bell-pepper) 10px,
+                var(--banana) 10px,
+                var(--banana) 20px
+            );
+            border-bottom: 2px solid var(--bell-pepper);
+        }
+
+        /* Header */
+        .pixel-header {
+            background-color: var(--card-bg);
+            border-bottom: var(--border-retro);
+            box-shadow: 0 4px 0px rgba(20, 112, 79, 0.2);
+            padding: 20px;
+            text-align: center;
+        }
+
+        .back-link {
+            display: inline-block;
+            font-family: 'Quicksand', sans-serif;
+            font-size: 1rem;
+            background-color: var(--banana);
+            color: var(--bell-pepper);
+            padding: 6px 16px;
+            border: 2px solid var(--bell-pepper);
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 700;
+            margin-bottom: 15px;
+            box-shadow: 2px 2px 0px var(--bell-pepper);
+            transition: transform 0.1s;
+        }
+
+        .back-link:hover {
+            transform: translate(-2px, -2px);
+            box-shadow: 4px 4px 0px var(--bell-pepper);
+            background-color: var(--avocado);
+            color: #fff;
+        }
+
+        .pixel-header h1 {
+            font-family: 'Quicksand', sans-serif;
+            font-weight: 900;
+            font-size: 1.3rem;
+            color: var(--bell-pepper);
+            margin-bottom: 8px;
+            text-transform: uppercase;
+        }
+
+        .mandatory-quote {
+            font-weight: 700;
+            font-size: 0.95rem;
+            color: var(--ocean-blue);
+            background-color: var(--banana);
+            display: inline-block;
+            padding: 4px 12px;
+            border: 2px solid var(--bell-pepper);
+            border-radius: 8px;
+        }
+
+        /* Container */
+        .container {
+            max-width: 900px;
+            margin: 30px auto;
+            padding: 0 20px;
+        }
+
+        /* Retro Window Box */
+        .retro-window {
+            background-color: var(--card-bg);
+            border: var(--border-retro);
+            box-shadow: var(--shadow-retro);
+            border-radius: 12px;
+            margin-bottom: 30px;
+            overflow: hidden;
+        }
+
+        .retro-window-header {
+            background-color: var(--ocean-blue);
+            padding: 8px 12px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: var(--border-retro);
+        }
+
+        .window-title {
+            font-family: 'VT323', monospace;
+            color: #fff;
+            font-size: 1.2rem;
+            letter-spacing: 1px;
+        }
+
+        .window-body {
+            padding: 25px;
+        }
+
+        h2.exercise-title {
+            font-family: 'Quicksand', sans-serif;
+            font-weight: 900;
+            font-size: 1.3rem;
+            color: #fff;
+            background-color: var(--avocado);
+            padding: 10px 15px;
+            border: var(--border-retro);
+            border-radius: 8px;
+            margin-bottom: 20px;
+            box-shadow: 3px 3px 0px var(--bell-pepper);
+        }
+
+        h3.question-text {
+            font-size: 1.05rem;
+            color: var(--bell-pepper);
+            margin-bottom: 15px;
+            font-weight: 700;
+            background-color: var(--banana);
+            padding: 10px 15px;
+            border: 2px solid var(--bell-pepper);
+            border-radius: 6px;
+        }
+
+        ul.answer-list {
+            list-style-type: none;
+            padding-left: 0;
+        }
+
+        ul.answer-list li {
+            margin-bottom: 12px;
+            padding: 12px 15px;
+            background-color: #f9fefb;
+            border: 2px solid var(--bell-pepper);
+            border-radius: 8px;
+            box-shadow: 2px 2px 0px rgba(20, 112, 79, 0.15);
+        }
+
+        ul.answer-list li strong {
+            color: var(--ocean-blue);
+        }
+
+        .email-box {
+            background-color: #fffff8;
+            border: 2px dashed var(--ocean-blue);
+            padding: 20px;
+            border-radius: 8px;
+            font-style: italic;
+            margin-top: 10px;
+        }
+
+        /* Footer */
+        .pixel-footer {
+            text-align: center;
+            margin-top: 50px;
+            background-color: var(--card-bg);
+            border-top: var(--border-retro);
+            padding: 20px;
+        }
+
+        .pixel-footer p {
+            font-size: 0.9rem;
+            color: var(--bell-pepper);
+            font-weight: 700;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header class="pixel-header">
+        <div class="checkerboard-bar"></div>
+        <br>
+        <a href="index.html" class="back-link">⬅ Quay lại Trang chủ</a>
+        <h1>BÀI 6: GIAO TIẾP VÀ ỨNG XỬ TRONG KHÔNG GIAN MẠNG</h1>
+        <p class="mandatory-quote">Trang web tổng hợp bài tập & thuyết trình môn Tin học 12</p>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container">
+
+        <!-- Luyện tập 1 -->
+        <div class="retro-window">
+            <div class="retro-window-header">
+                <span class="window-title">luyen_tap_1.txt</span>
+            </div>
+            <div class="window-body">
+                <h2 class="exercise-title">📌 LUYỆN TẬP 1</h2>
+                <h3 class="question-text">Hãy kể về một trải nghiệm giao tiếp trong không gian mạng mà em từng tham gia.</h3>
+                <ul class="answer-list">
+                    <li>Em đã từng sử dụng <strong>Zalo</strong> để nhắn tin với các bạn trong nhóm nhằm phân công nhiệm vụ làm bài thuyết trình. Chúng em trao đổi ý tưởng, chia sẻ tài liệu và góp ý cho nhau để hoàn thành bài tập. Nhờ đó, việc làm việc nhóm trở nên thuận tiện và hiệu quả hơn mà không cần gặp mặt trực tiếp.</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Luyện tập 2 -->
+        <div class="retro-window">
+            <div class="retro-window-header">
+                <span class="window-title">luyen_tap_2.txt</span>
+            </div>
+            <div class="window-body">
+                <h2 class="exercise-title">📌 LUYỆN TẬP 2</h2>
+                <h3 class="question-text">Hãy nêu một vài ví dụ minh họa cho việc vận dụng các lợi ích của giao tiếp trong không gian mạng để tạo sự tiện lợi cho công việc hoặc cuộc sống.</h3>
+                <ul class="answer-list">
+                    <li><strong>Học trực tuyến:</strong> Học qua Coursera, Udemy giúp tiếp cận kiến thức mọi lúc, mọi nơi.</li>
+                    <li><strong>Làm việc từ xa:</strong> Sử dụng email, Zoom, Teams để trao đổi và làm việc thuận tiện.</li>
+                    <li><strong>Mua sắm trực tuyến:</strong> Mua hàng qua các sàn thương mại điện tử, tiết kiệm thời gian đi lại.</li>
+                    <li><strong>Liên lạc với người thân, bạn bè:</strong> Dùng Messenger, WhatsApp để nhắn tin, gọi video nhanh chóng, tiết kiệm chi phí.</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Vận dụng -->
+        <div class="retro-window">
+            <div class="retro-window-header">
+                <span class="window-title">van_dung_email.eml</span>
+            </div>
+            <div class="window-body">
+                <h2 class="exercise-title">🚀 VẬN DỤNG</h2>
+                <h3 class="question-text">Soạn email mượn vở ghi của bạn khi bị ốm trước kỳ thi.</h3>
+                <div class="email-box">
+                    <p>Chào bạn,</p>
+                    <p>Mình viết email này để xin lỗi vì đã phải làm phiền bạn, nhưng mình đang gặp phải một tình huống khẩn cấp và cần sự giúp đỡ của bạn.</p>
+                    <p>Như bạn biết, mình đã bị ốm suốt mấy ngày qua và không thể đến trường được. Vào ngày mai, lịch thi của chúng ta sẽ diễn ra và mình muốn mượn vở ghi của bạn để chuẩn bị cho bài kiểm tra. Vì vậy, mình muốn hỏi bạn liệu có thể mượn vở của bạn được không? Mình sẽ giữ gìn nó cẩn thận và sẽ trả lại ngay sau khi đã sử dụng xong.</p>
+                    <p>Rất mong bạn có thể cho mình mượn vở. Nếu bạn đồng ý, hãy trả lời cho mình biết nhé! Cảm ơn bạn rất nhiều. Mong sớm nhận được phản hồi từ bạn.</p>
+                    <p style="margin-top: 15px;"><strong>Trân trọng</strong></p>
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="pixel-footer">
+        <div class="checkerboard-bar"></div>
+        <br>
+        <p>Trang web tổng hợp bài tập & thuyết trình môn Tin học 12</p>
+        <p>© 2026 PIXEL CLUB. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>
