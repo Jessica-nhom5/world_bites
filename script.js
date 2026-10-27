@@ -16,7 +16,8 @@ const assignmentsData = [
     { title: "Bài 6: Giao tiếp trong không gian mạng", topic: "Đạo đức & Xã hội", description: "Trải nghiệm giao tiếp mạng và soạn thảo email ứng xử.", status: "Hoàn thành", statusClass: "status-done", author: "Nhóm 5", link: "Bai6.html" },
     { title: "Bài 7: Thực hành tạo trang web đầu tiên", topic: "HTML Cơ bản", description: "Xây dựng trang web đầu tiên với thẻ HTML và văn bản.", status: "Hoàn thành", statusClass: "status-done", author: "Nhóm 5", link: "Bai7.html" },
     { title: "Bài 8: Định dạng văn bản Web", topic: "Định dạng", description: "Sử dụng được thẻ HTML để định dạng văn bản, phông chữ.", status: " Đang hoàn thành", statusClass: "status-doing", author: "Nhóm 5", link: "Bai8.html" },
-    { title: "Bài 9: Tạo danh sách, bảng", topic: "Danh sách & Bảng", description: "Sử dụng được thẻ HTML để tạo danh sách, bảng.", status: " Đang hoàn thành", statusClass: "status-doing", author: "Nhóm 5", link: "Bai9.html" }
+    { title: "Bài 9: Tạo danh sách, bảng", topic: "Danh sách & Bảng", description: "Sử dụng được thẻ HTML để tạo danh sách, bảng.", status: " Đang hoàn thành", statusClass: "status-doing", author: "Nhóm 5", link: "Bai9.html" },
+     { title:"Bài 10: Tạo liên kết", topic: "Liên kết", description: "Sử dụng được thẻ HTML để tạo liên kết.", status: " Đang hoàn thành", statusClass: "status-doing", author: "Nhóm 5", link: "Bai10.html" }
 ];
 
 const presentationsData = [
