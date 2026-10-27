@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bài 9: Tạo bảng trong trang web - PIXEL CLUB</title>
+    <link href="https://fonts.googleapis.com/css2?family=VT323&family=Quicksand:wght@500;700;900&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --ocean-blue: #00a0b5;
+            --banana: #ffef5a;
+            --avocado: #98c54e;
+            --bell-pepper: #14704f;
+            --bubblegum: #f478b0;
+            --bg-color: #e2f8ff;
+            --card-bg: #ffffff;
+            --text-color: #14704f;
+            --border-retro: 3px solid #14704f;
+            --shadow-retro: 4px 4px 0px #14704f;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Quicksand', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.7;
+            padding-bottom: 40px;
+        }
+
+        /* Checkerboard Bar */
+        .checkerboard-bar {
+            height: 12px;
+            background: repeating-linear-gradient(
+                45deg,
+                var(--bell-pepper),
+                var(--bell-pepper) 10px,
+                var(--banana) 10px,
+                var(--banana) 20px
+            );
+            border-bottom: 2px solid var(--bell-pepper);
+        }
+
+        /* Header */
+        .pixel-header {
+            background-color: var(--card-bg);
+            border-bottom: var(--border-retro);
+            box-shadow: 0 4px 0px rgba(20, 112, 79, 0.2);
+            padding: 20px;
+            text-align: center;
+        }
+
+        .back-link {
+            display: inline-block;
+            font-family: 'Quicksand', sans-serif;
+            font-size: 1rem;
+            background-color: var(--banana);
+            color: var(--bell-pepper);
+            padding: 6px 16px;
+            border: 2px solid var(--bell-pepper);
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 700;
+            margin-bottom: 15px;
+            box-shadow: 2px 2px 0px var(--bell-pepper);
+            transition: transform 0.1s;
+        }
+
+        .back-link:hover {
+            transform: translate(-2px, -2px);
+            box-shadow: 4px 4px 0px var(--bell-pepper);
+            background-color: var(--avocado);
+            color: #fff;
+        }
+
+        .pixel-header h1 {
+            font-family: 'Quicksand', sans-serif;
+            font-weight: 900;
+            font-size: 1.3rem;
+            color: var(--bell-pepper);
+            margin-bottom: 8px;
+            text-transform: uppercase;
+        }
+
+        .mandatory-quote {
+            font-weight: 700;
+            font-size: 0.95rem;
+            color: var(--ocean-blue);
+            background-color: var(--banana);
+            display: inline-block;
+            padding: 4px 12px;
+            border: 2px solid var(--bell-pepper);
+            border-radius: 8px;
+        }
+
+        /* Container */
+        .container {
+            max-width: 900px;
+            margin: 30px auto;
+            padding: 0 20px;
+        }
+
+        /* Retro Window Box */
+        .retro-window {
+            background-color: var(--card-bg);
+            border: var(--border-retro);
+            box-shadow: var(--shadow-retro);
+            border-radius: 12px;
+            margin-bottom: 30px;
+            overflow: hidden;
+        }
+
+        .retro-window-header {
+            background-color: var(--ocean-blue);
+            padding: 8px 12px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: var(--border-retro);
+        }
+
+        .window-title {
+            font-family: 'VT323', monospace;
+            color: #fff;
+            font-size: 1.2rem;
+            letter-spacing: 1px;
+        }
+
+        .window-body {
+            padding: 25px;
+        }
+
+        h2.exercise-title {
+            font-family: 'Quicksand', sans-serif;
+            font-weight: 900;
+            font-size: 1.3rem;
+            color: #fff;
+            background-color: var(--avocado);
+            padding: 10px 15px;
+            border: var(--border-retro);
+            border-radius: 8px;
+            margin-bottom: 20px;
+            box-shadow: 3px 3px 0px var(--bell-pepper);
+        }
+
+        h3.question-text {
+            font-size: 1.05rem;
+            color: var(--bell-pepper);
+            margin-bottom: 15px;
+            font-weight: 700;
+            background-color: var(--banana);
+            padding: 10px 15px;
+            border: 2px solid var(--bell-pepper);
+            border-radius: 6px;
+        }
+
+        ul.answer-list {
+            list-style-type: none;
+            padding-left: 0;
+        }
+
+        ul.answer-list li {
+            margin-bottom: 12px;
+            padding: 12px 15px;
+            background-color: #f9fefb;
+            border: 2px solid var(--bell-pepper);
+            border-radius: 8px;
+            box-shadow: 2px 2px 0px rgba(20, 112, 79, 0.15);
+        }
+
+        /* Code Block Styling */
+        pre.code-block {
+            background-color: #14704f;
+            color: #ffef5a;
+            padding: 15px;
+            border-radius: 8px;
+            font-family: monospace;
+            font-size: 0.95rem;
+            overflow-x: auto;
+            border: 2px solid var(--ocean-blue);
+            margin-top: 10px;
+            margin-bottom: 10px;
+            box-shadow: inset 2px 2px 0px rgba(0,0,0,0.3);
+        }
+
+        .preview-box {
+            background-color: #fff;
+            border: 2px dashed var(--ocean-blue);
+            padding: 20px;
+            border-radius: 8px;
+            margin-top: 10px;
+            overflow-x: auto;
+        }
+
+        /* Footer */
+        .pixel-footer {
+            text-align: center;
+            margin-top: 50px;
+            background-color: var(--card-bg);
+            border-top: var(--border-retro);
+            padding: 20px;
+        }
+
+        .pixel-footer p {
+            font-size: 0.9rem;
+            color: var(--bell-pepper);
+            font-weight: 700;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header class="pixel-header">
+        <div class="checkerboard-bar"></div>
+        <br>
+        <a href="index.html" class="back-link">⬅ Quay lại Trang chủ</a>
+        <h1>BÀI 9: TẠO BẢNG TRONG TRANG WEB</h1>
+        <p class="mandatory-quote">Trang web tổng hợp bài tập & thuyết trình môn Tin học 12</p>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container">
+
+        <!-- Luyện tập 1 -->
+        <div class="retro-window">
+            <div class="retro-window-header">
+                <span class="window-title">luyen_tap_bang.html</span>
+            </div>
+            <div class="window-body">
+                <h2 class="exercise-title">📌 LUYỆN TẬP</h2>
+                <h3 class="question-text">Sửa lại chương trình trong Hình 9.5a, sử dụng thuộc tính style thay vì thuộc tính border để tạo viền cho bảng:</h3>
+                
+                <p style="font-weight: 700; margin-bottom: 5px;">Mã nguồn HTML & inline CSS:</p>
+                <pre class="code-block"><code>&lt;table style="border-collapse: collapse; margin: 0 auto;"&gt;
+  &lt;tr&gt;
+    &lt;th rowspan="2" style="border: 2px solid blue; padding: 8px 15px;"&gt;Họ tên&lt;/th&gt;
+    &lt;th colspan="3" style="border: 2px solid blue; padding: 8px 15px;"&gt;Điểm thi&lt;/th&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td style="border: 2px solid red; padding: 8px 15px; font-weight: bold; color: red;"&gt;Toán&lt;/td&gt;
+    &lt;td style="border: 2px solid yellow; padding: 8px 15px; font-weight: bold; color: #d4ac0d;"&gt;Vật lí&lt;/td&gt;
+    &lt;td style="border: 2px solid green; padding: 8px 15px; font-weight: bold; color: green;"&gt;Hóa học&lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/table&gt;</code></pre>
+
+                <p style="font-weight: 700; margin-top: 15px; margin-bottom: 5px;">Kết quả hiển thị trên trình duyệt:</p>
+                <div class="preview-box">
+                    <table style="border-collapse: collapse; margin: 0 auto; text-align: center;">
+                        <tr>
+                            <th rowspan="2" style="border: 2px solid blue; padding: 8px 15px; background-color: #f0f8ff;">Họ tên</th>
+                            <th colspan="3" style="border: 2px solid blue; padding: 8px 15px; background-color: #f0f8ff;">Điểm thi</th>
+                        </tr>
+                        <tr>
+                            <td style="border: 2px solid red; padding: 8px 15px; font-weight: bold; color: red;">Toán</td>
+                            <td style="border: 2px solid yellow; padding: 8px 15px; font-weight: bold; color: #b8860b;">Vật lí</td>
+                            <td style="border: 2px solid green; padding: 8px 15px; font-weight: bold; color: green;">Hóa học</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <!-- Vận dụng 1 -->
+        <div class="retro-window">
+            <div class="retro-window-header">
+                <span class="window-title">van_dung_1.txt</span>
+            </div>
+            <div class="window-body">
+                <h2 class="exercise-title">🚀 VẬN DỤNG 1</h2>
+                <h3 class="question-text">Bài tập Vận dụng 1 (Đang cập nhật nội dung):</h3>
+                <ul class="answer-list">
+                    <li><strong>Trạng thái:</strong> Nhóm 5 đang hoàn thiện và sẽ cập nhật thêm phần mã nguồn bài Vận dụng 1 ngay sau khi làm xong! ⏳</li>
+                </ul>
+            </div>
+        </div>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="pixel-footer">
+        <div class="checkerboard-bar"></div>
+        <br>
+        <p>Trang web tổng hợp bài tập & thuyết trình môn Tin học 12</p>
+        <p>© 2026 PIXEL CLUB. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>
