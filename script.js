@@ -12,7 +12,8 @@ const membersData = [
 const assignmentsData = [
     { title: "Bài 3: Một số thiết bị mạng thông dụng", topic: "Mạng máy tính & Internet", description: "Tìm hiểu về một số thiết bị mạng thông dụng.", status: "Hoàn thành", statusClass: "status-done", author: "Nhóm 5", link: "Bai3.html" },
     { title: "Bài 4: Giao thức mạng", topic: "Giao thức mạng", description: "Vai trò-chức năng của giao thức mạng & giao thức IP/TCP.", status: "Hoàn thành", statusClass: "status-done", author: "Nhóm 5", link: "Bai4.html" },
-    { title: "Bài 5: Thực hành chia sẻ tài nguyên trên mạng", topic: "Chia sẻ tài nguyên mạng", description: "Chia sẻ tệp và thư mục trên mạng cục bộ.", status: "Đang thực hiện", statusClass: "status-doing", author: "Nhóm 5", link: "Bai5.html" }
+    { title: "Bài 5: Thực hành chia sẻ tài nguyên trên mạng", topic: "Chia sẻ tài nguyên mạng", description: "Chia sẻ tệp và thư mục trên mạng cục bộ.", status: "Hoàn thành", statusClass: "status-done", author: "Nhóm 5", link: "Bai5.html" }
+    { title: "Bài 6: Giao tiếp và ứng xử trong không gian mạng", topic: "Giao tiếp & ứng xử", description: "Phân tích ưu & nhược điểm và tính nhân văn trong giao tiếp trên không gian mạng", status: "Hoàn thành", statusClass: "status-done", author: "Nhóm 5", link: "Bai6.html" }
 ];
 
 // Dữ liệu mẫu bài thuyết trình
