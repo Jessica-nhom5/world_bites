@@ -1,23 +1,23 @@
-// Dữ liệu 6 thành viên chính thức
+// Dữ liệu 6 thành viên chính thức kèm đường dẫn tiểu sử riêng
 const membersData = [
-    { name: "Đặng Hoài Triệu", avatar: "assets/trieu.jpg", role: "Thành viên" },
-    { name: "Phan Nguyễn Như Phúc", avatar: "assets/nphuc.jpg", role: "Thành viên" },
-    { name: "Dương Phạm Ánh Ngân", avatar: "assets/angan.jpg", role: "Thành viên" },
-    { name: "Lê Huỳnh Khánh Ngọc", avatar: "assets/lngoc.jpg", role: "Thành viên" },
-    { name: "Dương Bảo Ngọc", avatar: "assets/bngoc.jpg", role: "Thành viên" },
-    { name: "Huỳnh Thanh Mai", avatar: "assets/tmai.jpg", role: "Thành viên" }
+    { name: "Đặng Hoài Triệu", avatar: "assets/trieu.jpg", role: "Thành viên", link: "trieu.html" },
+    { name: "Phan Nguyễn Như Phúc", avatar: "assets/nphuc.jpg", role: "Thành viên", link: "phuc.html" },
+    { name: "Dương Phạm Ánh Ngân", avatar: "assets/angan.jpg", role: "Thành viên", link: "angan.html" },
+    { name: "Lê Huỳnh Khánh Ngọc", avatar: "assets/lngoc.jpg", role: "Thành viên", link: "lngoc.html" },
+    { name: "Dương Bảo Ngọc", avatar: "assets/bngoc.jpg", role: "Thành viên", link: "bngoc.html" },
+    { name: "Huỳnh Thanh Mai", avatar: "assets/tmai.jpg", role: "Thành viên", link: "tmai.html" }
 ];
 
-// Dữ liệu bài tập liên kết các bài 3, 4, 5, 6, 7
+// Dữ liệu bài tập liên kết các bài 3 đến 10
 const assignmentsData = [
     { title: "Bài 3: Một số thiết bị mạng thông dụng", topic: "Mạng máy tính", description: "Tìm hiểu thiết bị mạng gia đình và kết nối di động.", status: "Hoàn thành", statusClass: "status-done", author: "Nhóm 5", link: "Bai3.html" },
     { title: "Bài 4: Giao thức mạng và tên miền", topic: "Giao thức & DNS", description: "Tìm hiểu giao thức gọi điện thoại, địa chỉ IP, DNS và lệnh ping.", status: "Hoàn thành", statusClass: "status-done", author: "Nhóm 5", link: "Bai4.html" },
     { title: "Bài 5: Thực hành chia sẻ tệp và thư mục", topic: "Thực hành mạng", description: "Chia sẻ thư mục quyền Read/Write giữa các máy tính.", status: "Hoàn thành", statusClass: "status-done", author: "Nhóm 5", link: "Bai5.html" },
     { title: "Bài 6: Giao tiếp trong không gian mạng", topic: "Đạo đức & Xã hội", description: "Trải nghiệm giao tiếp mạng và soạn thảo email ứng xử.", status: "Hoàn thành", statusClass: "status-done", author: "Nhóm 5", link: "Bai6.html" },
-    { title: "Bài 7: Thực hành tạo trang web đầu tiên", topic: "HTML Cơ bản", description: "Xây dựng trang web đầu tiên với thẻ HTML và văn bản.", status: "Hoàn thành", statusClass: "status-done", author: "Nhóm 5", link: "Bai7.html" },
-    { title: "Bài 8: Định dạng văn bản Web", topic: "Định dạng", description: "Sử dụng được thẻ HTML để định dạng văn bản, phông chữ.", status: " Đang hoàn thành", statusClass: "status-doing", author: "Nhóm 5", link: "Bai8.html" },
-    { title: "Bài 9: Tạo danh sách, bảng", topic: "Danh sách & Bảng", description: "Sử dụng được thẻ HTML để tạo danh sách, bảng.", status: " Đang hoàn thành", statusClass: "status-doing", author: "Nhóm 5", link: "Bai9.html" },
-    { title:"Bài 10: Tạo liên kết", topic: "Liên kết", description: "Sử dụng được thẻ HTML để tạo liên kết.", status: " Đang hoàn thành", statusClass: "status-doing", author: "Nhóm 5", link: "Bai10.html" }
+    { title: "Bài 7: Thực hành tạo trang web đầu tiên", topic: "HTML Cơ bản", description: "Xây dựng trang web đầu tiên với thẻ img và văn bản.", status: "Hoàn thành", statusClass: "status-done", author: "Nhóm 5", link: "Bai7.html" },
+    { title: "Bài 8: Định dạng văn bản trên trang web", topic: "HTML & CSS", description: "Thực hành các thẻ định dạng văn bản strong, em và màu sắc chữ.", status: "Hoàn thành", statusClass: "status-done", author: "Nhóm 5", link: "Bai8.html" },
+    { title: "Bài 9: Tạo bảng trong trang web", topic: "HTML & CSS Table", description: "Thực hành sử dụng thuộc tính style tạo viền và gộp ô cho bảng.", status: "Hoàn thành", statusClass: "status-done", author: "Nhóm 5", link: "Bai9.html" },
+    { title: "Bài 10: Liên kết trang web", topic: "HTML Links", description: "Thực hành tạo liên kết nội bộ và liên kết ngoài (Facebook).", status: "Hoàn thành", statusClass: "status-done", author: "Nhóm 5", link: "Bai10.html" }
 ];
 
 const presentationsData = [
@@ -44,7 +44,7 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     });
 
-    // 2. Render Thành viên
+    // 2. Render Thành viên (có nút Xem tiểu sử riêng)
     const membersContainer = document.getElementById("members-container");
     if (membersContainer) {
         membersContainer.innerHTML = membersData.map(m => `
@@ -54,6 +54,9 @@ document.addEventListener("DOMContentLoaded", () => {
                 </div>
                 <div class="member-name">${m.name}</div>
                 <span class="member-role">${m.role}</span>
+                <div style="margin-top: 15px;">
+                    <a href="${m.link}" class="retro-btn" style="display: inline-block; font-size: 0.82rem; padding: 5px 14px;">📖 Xem tiểu sử</a>
+                </div>
             </div>
         `).join("");
     }
