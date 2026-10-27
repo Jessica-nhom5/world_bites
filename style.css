@@ -3,7 +3,7 @@
     --banana: #ffef5a;
     --avocado: #98c54e;
     --bell-pepper: #14704f;
-    --bubblegum: #f478b0; /* Chỉ dùng làm màu nhấn */
+    --bubblegum: #f478b0;
     --bg-color: #e2f8ff;
     --card-bg: #ffffff;
     --text-color: #14704f;
@@ -333,7 +333,7 @@ body {
     font-weight: 700;
 }
 
-/* Cards Grid (Assignments & Presentations) */
+/* Cards Grid */
 .cards-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
