@@ -14,7 +14,8 @@ const assignmentsData = [
     { title: "Bài 4: Giao thức mạng và tên miền", topic: "Giao thức & DNS", description: "Tìm hiểu giao thức gọi điện thoại, địa chỉ IP, DNS và lệnh ping.", status: "Hoàn thành", statusClass: "status-done", author: "Nhóm 5", link: "Bai4.html" },
     { title: "Bài 5: Thực hành chia sẻ tệp và thư mục", topic: "Thực hành mạng", description: "Chia sẻ thư mục quyền Read/Write giữa các máy tính.", status: "Hoàn thành", statusClass: "status-done", author: "Nhóm 5", link: "Bai5.html" },
     { title: "Bài 6: Giao tiếp trong không gian mạng", topic: "Đạo đức & Xã hội", description: "Trải nghiệm giao tiếp mạng và soạn thảo email ứng xử.", status: "Hoàn thành", statusClass: "status-done", author: "Nhóm 5", link: "Bai6.html" },
-    { title: "Bài 7: Thực hành tạo trang web đầu tiên", topic: "HTML Cơ bản", description: "Xây dựng trang web đầu tiên với thẻ img và văn bản.", status: "Hoàn thành", statusClass: "status-done", author: "Nhóm 5", link: "Bai7.html" }
+    { title: "Bài 7: Thực hành tạo trang web đầu tiên", topic: "HTML Cơ bản", description: "Xây dựng trang web đầu tiên với thẻ HTML và văn bản.", status: "Hoàn thành", statusClass: "status-done", author: "Nhóm 5", link: "Bai7.html" },
+    { title: "Bài 8: Định dạng văn bản Web", topic: "Định dạng văn bản & phông chữ", description: "Sửu dụng được thẻ HTML để định dạng văn abnr, phông chữ.", status: " Đang hoàn thành", statusClass: "status-doing", author: "Nhóm 5", link: "Bai8.html" }
 ];
 
 const presentationsData = [
