@@ -14,6 +14,7 @@ const assignmentsData = [
     { title: "Bài 4: Giao thức mạng", topic: "Giao thức mạng", description: "Vai trò-chức năng của giao thức mạng & giao thức IP/TCP.", status: "Hoàn thành", statusClass: "status-done", author: "Nhóm 5", link: "Bai4.html" },
     { title: "Bài 5: Thực hành chia sẻ tài nguyên trên mạng", topic: "Chia sẻ tài nguyên mạng", description: "Chia sẻ tệp và thư mục trên mạng cục bộ.", status: "Hoàn thành", statusClass: "status-done", author: "Nhóm 5", link: "Bai5.html" }
     { title: "Bài 6: Giao tiếp và ứng xử trong không gian mạng", topic: "Giao tiếp & ứng xử", description: "Phân tích ưu & nhược điểm và tính nhân văn trong giao tiếp trên không gian mạng", status: "Hoàn thành", statusClass: "status-done", author: "Nhóm 5", link: "Bai6.html" }
+    { title: "Bài 7: HTML và cấu trúc trang Web", topic: "Lập trình website", description: "Bước đầu làm quen với ngôn ngữ lập trình", status: "Hoàn thành", statusClass: "status-done", author: "Nhóm 5", link: "Bai7.html" }
 ];
 
 // Dữ liệu mẫu bài thuyết trình
