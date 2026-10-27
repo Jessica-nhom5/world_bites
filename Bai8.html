@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bài 8: Định dạng văn bản trên trang web - PIXEL CLUB</title>
+    <link href="https://fonts.googleapis.com/css2?family=VT323&family=Quicksand:wght@500;700;900&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --ocean-blue: #00a0b5;
+            --banana: #ffef5a;
+            --avocado: #98c54e;
+            --bell-pepper: #14704f;
+            --bubblegum: #f478b0;
+            --bg-color: #e2f8ff;
+            --card-bg: #ffffff;
+            --text-color: #14704f;
+            --border-retro: 3px solid #14704f;
+            --shadow-retro: 4px 4px 0px #14704f;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Quicksand', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.7;
+            padding-bottom: 40px;
+        }
+
+        /* Checkerboard Bar */
+        .checkerboard-bar {
+            height: 12px;
+            background: repeating-linear-gradient(
+                45deg,
+                var(--bell-pepper),
+                var(--bell-pepper) 10px,
+                var(--banana) 10px,
+                var(--banana) 20px
+            );
+            border-bottom: 2px solid var(--bell-pepper);
+        }
+
+        /* Header */
+        .pixel-header {
+            background-color: var(--card-bg);
+            border-bottom: var(--border-retro);
+            box-shadow: 0 4px 0px rgba(20, 112, 79, 0.2);
+            padding: 20px;
+            text-align: center;
+        }
+
+        .back-link {
+            display: inline-block;
+            font-family: 'Quicksand', sans-serif;
+            font-size: 1rem;
+            background-color: var(--banana);
+            color: var(--bell-pepper);
+            padding: 6px 16px;
+            border: 2px solid var(--bell-pepper);
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 700;
+            margin-bottom: 15px;
+            box-shadow: 2px 2px 0px var(--bell-pepper);
+            transition: transform 0.1s;
+        }
+
+        .back-link:hover {
+            transform: translate(-2px, -2px);
+            box-shadow: 4px 4px 0px var(--bell-pepper);
+            background-color: var(--avocado);
+            color: #fff;
+        }
+
+        .pixel-header h1 {
+            font-family: 'Quicksand', sans-serif;
+            font-weight: 900;
+            font-size: 1.3rem;
+            color: var(--bell-pepper);
+            margin-bottom: 8px;
+            text-transform: uppercase;
+        }
+
+        .mandatory-quote {
+            font-weight: 700;
+            font-size: 0.95rem;
+            color: var(--ocean-blue);
+            background-color: var(--banana);
+            display: inline-block;
+            padding: 4px 12px;
+            border: 2px solid var(--bell-pepper);
+            border-radius: 8px;
+        }
+
+        /* Container */
+        .container {
+            max-width: 900px;
+            margin: 30px auto;
+            padding: 0 20px;
+        }
+
+        /* Retro Window Box */
+        .retro-window {
+            background-color: var(--card-bg);
+            border: var(--border-retro);
+            box-shadow: var(--shadow-retro);
+            border-radius: 12px;
+            margin-bottom: 30px;
+            overflow: hidden;
+        }
+
+        .retro-window-header {
+            background-color: var(--ocean-blue);
+            padding: 8px 12px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: var(--border-retro);
+        }
+
+        .window-title {
+            font-family: 'VT323', monospace;
+            color: #fff;
+            font-size: 1.2rem;
+            letter-spacing: 1px;
+        }
+
+        .window-body {
+            padding: 25px;
+        }
+
+        h2.exercise-title {
+            font-family: 'Quicksand', sans-serif;
+            font-weight: 900;
+            font-size: 1.3rem;
+            color: #fff;
+            background-color: var(--avocado);
+            padding: 10px 15px;
+            border: var(--border-retro);
+            border-radius: 8px;
+            margin-bottom: 20px;
+            box-shadow: 3px 3px 0px var(--bell-pepper);
+        }
+
+        h3.question-text {
+            font-size: 1.05rem;
+            color: var(--bell-pepper);
+            margin-bottom: 15px;
+            font-weight: 700;
+            background-color: var(--banana);
+            padding: 10px 15px;
+            border: 2px solid var(--bell-pepper);
+            border-radius: 6px;
+        }
+
+        ul.answer-list {
+            list-style-type: none;
+            padding-left: 0;
+        }
+
+        ul.answer-list li {
+            margin-bottom: 12px;
+            padding: 12px 15px;
+            background-color: #f9fefb;
+            border: 2px solid var(--bell-pepper);
+            border-radius: 8px;
+            box-shadow: 2px 2px 0px rgba(20, 112, 79, 0.15);
+        }
+
+        ul.answer-list li strong {
+            color: var(--ocean-blue);
+        }
+
+        /* Code Block Styling */
+        pre.code-block {
+            background-color: #14704f;
+            color: #ffef5a;
+            padding: 15px;
+            border-radius: 8px;
+            font-family: monospace;
+            font-size: 0.95rem;
+            overflow-x: auto;
+            border: 2px solid var(--ocean-blue);
+            margin-top: 10px;
+            margin-bottom: 10px;
+            box-shadow: inset 2px 2px 0px rgba(0,0,0,0.3);
+        }
+
+        .preview-box {
+            background-color: #fff;
+            border: 2px dashed var(--ocean-blue);
+            padding: 15px;
+            border-radius: 8px;
+            margin-top: 10px;
+        }
+
+        /* Footer */
+        .pixel-footer {
+            text-align: center;
+            margin-top: 50px;
+            background-color: var(--card-bg);
+            border-top: var(--border-retro);
+            padding: 20px;
+        }
+
+        .pixel-footer p {
+            font-size: 0.9rem;
+            color: var(--bell-pepper);
+            font-weight: 700;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header class="pixel-header">
+        <div class="checkerboard-bar"></div>
+        <br>
+        <a href="index.html" class="back-link">⬅ Quay lại Trang chủ</a>
+        <h1>BÀI 8: ĐỊNH DẠNG VĂN BẢN TRÊN TRANG WEB</h1>
+        <p class="mandatory-quote">Trang web tổng hợp bài tập & thuyết trình môn Tin học 12</p>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container">
+
+        <!-- Luyện tập 1 -->
+        <div class="retro-window">
+            <div class="retro-window-header">
+                <span class="window-title">luyen_tap_1.html</span>
+            </div>
+            <div class="window-body">
+                <h2 class="exercise-title">📌 LUYỆN TẬP 1</h2>
+                <h3 class="question-text">Sửa lại đoạn mã để nhấn mạnh và làm nổi bật ý chính của câu:</h3>
+                
+                <p style="font-weight: 700; margin-bottom: 5px;">Mã HTML sau khi chỉnh sửa:</p>
+                <pre class="code-block"><code>&lt;p&gt;&lt;strong&gt;Thẻ strong&lt;/strong&gt; và &lt;em&gt;thẻ em&lt;/em&gt; được sử dụng để nhấn mạnh vào nội dung trong phần tử. Thẻ &lt;strong&gt;B&lt;/strong&gt; chỉ có tác dụng in đậm văn bản.&lt;/p&gt;</code></pre>
+                
+                <p style="font-weight: 700; margin-top: 15px; margin-bottom: 5px;">Kết quả hiển thị trên trình duyệt:</p>
+                <div class="preview-box">
+                    <p><strong>Thẻ strong</strong> và <em>thẻ em</em> được sử dụng để nhấn mạnh vào nội dung trong phần tử. Thẻ <strong>B</strong> chỉ có tác dụng in đậm văn bản.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Luyện tập 2 -->
+        <div class="retro-window">
+            <div class="retro-window-header">
+                <span class="window-title">luyen_tap_2.txt</span>
+            </div>
+            <div class="window-body">
+                <h2 class="exercise-title">📌 LUYỆN TẬP 2</h2>
+                <h3 class="question-text">Thực hành theo yêu cầu hình ảnh bài học (Quan sát hình ảnh định dạng văn bản trong SGK).</h3>
+                <ul class="answer-list">
+                    <li><strong>Gợi ý thực hiện:</strong> Áp dụng linh hoạt các thẻ HTML định dạng văn bản như <code>&lt;b&gt;</code>, <code>&lt;i&gt;</code>, <code>&lt;u&gt;</code>, <code>&lt;strong&gt;</code>, <code>&lt;em&gt;</code> và thuộc tính mã màu CSS để hoàn thành mẫu bài tập thực hành theo yêu cầu của giáo viên.</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Vận dụng 1 -->
+        <div class="retro-window">
+            <div class="retro-window-header">
+                <span class="window-title">van_dung_1.txt</span>
+            </div>
+            <div class="window-body">
+                <h2 class="exercise-title">🚀 VẬN DỤNG 1</h2>
+                <h3 class="question-text">Các bước sử dụng một màu cụ thể từ bức ảnh làm màu tiêu đề cho bài thơ:</h3>
+                <ul class="answer-list">
+                    <li><strong>1. Chọn màu cụ thể:</strong> Sử dụng công cụ lấy màu (Color Picker / Eyedropper) để lấy mã màu hex (ví dụ: <code>#14704f</code>) mong muốn từ bức ảnh.</li>
+                    <li><strong>2. Chọn ảnh nền:</strong> Chọn một bức ảnh phù hợp để làm nền cho tiêu đề (hoặc dùng khung nền màu đơn giản).</li>
+                    <li><strong>3. Tạo tiêu đề trong HTML:</strong> Sử dụng các thẻ tiêu đề chuẩn như <code>&lt;h1&gt;</code>, <code>&lt;h2&gt;</code> hoặc <code>&lt;h3&gt;</code> để nhập tên bài thơ.</li>
+                    <li><strong>4. Thiết lập CSS:</strong> Thêm thuộc tính <code>background-image</code> để chèn ảnh nền và thuộc tính <code>color</code> với mã màu đã chọn để định dạng màu chữ tiêu đề.</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Vận dụng 2 -->
+        <div class="retro-window">
+            <div class="retro-window-header">
+                <span class="window-title">van_dung_2.txt</span>
+            </div>
+            <div class="window-body">
+                <h2 class="exercise-title">🚀 VẬN DỤNG 2</h2>
+                <h3 class="question-text">Tóm tắt các kiểu định dạng kiểu chữ và kích thước văn bản cơ bản trong HTML/CSS:</h3>
+                <ul class="answer-list">
+                    <li><strong>Định dạng chữ đậm:</strong> Sử dụng thẻ <code>&lt;strong&gt;</code> (nhấn mạnh ý nghĩa) hoặc thẻ <code>&lt;b&gt;</code> (chỉ làm đậm nét), hoặc thuộc tính CSS <code>font-weight: bold;</code>.</li>
+                    <li><strong>Định dạng chữ thường:</strong> Sử dụng kiểu chữ tiêu chuẩn hoặc thuộc tính CSS <code>font-style: normal;</code> / <code>text-transform: lowercase;</code>.</li>
+                    <li><strong>Định dạng cỡ chữ:</strong> Sử dụng thuộc tính CSS <code>font-size</code> (ví dụ: <code>font-size: 16px;</code> hoặc <code>font-size: 1.2rem;</code>).</li>
+                </ul>
+            </div>
+        </div>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="pixel-footer">
+        <div class="checkerboard-bar"></div>
+        <br>
+        <p>Trang web tổng hợp bài tập & thuyết trình môn Tin học 12</p>
+        <p>© 2026 PIXEL CLUB. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>
