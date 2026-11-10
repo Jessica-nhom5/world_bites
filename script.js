@@ -207,7 +207,7 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 
-    // --- BỔ SUNG: 7. Mini-game Catcher (Hứng Điểm 10) ---
+// --- 7. Mini-game Catcher (Hứng Điểm 10) ---
     const basket = document.getElementById("player-basket");
     const item = document.getElementById("falling-item");
     const container = document.getElementById("game-canvas-container");
@@ -221,39 +221,62 @@ document.addEventListener("DOMContentLoaded", () => {
     let isPlaying = false;
 
     if (startBtn && container) {
+        // Lắng nghe di chuyển chuột điều khiển giỏ
+        container.addEventListener("mousemove", (e) => {
+            if (!isPlaying) return;
+            const rect = container.getBoundingClientRect();
+            basketX = e.clientX - rect.left - 35;
+            if (basketX < 0) basketX = 0;
+            if (basketX > container.clientWidth - 70) basketX = container.clientWidth - 70;
+            basket.style.left = basketX + "px";
+        });
+
         startBtn.addEventListener("click", () => {
             if (isPlaying) return;
             isPlaying = true;
             score = 0;
             scoreDisplay.innerText = score;
             startBtn.style.display = "none";
-            itemY = 0;
-            itemX = Math.random() * (container.clientWidth - 40);
+            resetItem();
 
-            container.addEventListener("mousemove", (e) => {
-                const rect = container.getBoundingClientRect();
-                basketX = e.clientX - rect.left - 35;
-                if (basketX < 0) basketX = 0;
-                if (basketX > container.clientWidth - 70) basketX = container.clientWidth - 70;
-                basket.style.left = basketX + "px";
-            });
+            // Xóa interval cũ nếu có để tránh chạy chồng chéo
+            if (gameInterval) clearInterval(gameInterval);
 
             gameInterval = setInterval(() => {
-                itemY += 4;
+                if (!isPlaying) return;
+                itemY += 4; // Tốc độ rơi
                 item.style.top = itemY + "px";
                 item.style.left = itemX + "px";
 
-                if (itemY >= container.clientHeight - 45) {
-                    if (itemX + 25 >= basketX && itemX <= basketX + 70) {
+                // Vị trí đáy của giỏ (cách đáy khung 35px)
+                const basketTop = container.clientHeight - 35;
+
+                // Khi vật phẩm rơi tới tầm của giỏ
+                if (itemY >= basketTop && itemY <= basketTop + 15) {
+                    // Kiểm tra xem có bắt trúng giỏ không (giỏ rộng 70px)
+                    if (itemX + 15 >= basketX && itemX <= basketX + 70) {
                         score += 10;
                         scoreDisplay.innerText = score;
                         resetItem();
-                    } else if (itemY >= container.clientHeight - 10) {
-                        resetItem();
                     }
                 }
-            }, 20);
+
+                // Nếu rơi chạm đáy khung mà không bắt được -> tạo vật phẩm mới
+                if (itemY >= container.clientHeight - 20) {
+                    resetItem();
+                }
+            }, 25);
         });
+    }
+
+    function resetItem() {
+        itemY = 0;
+        if (container) {
+            itemX = Math.random() * (container.clientWidth - 40);
+        }
+        item.style.top = itemY + "px";
+        item.style.left = itemX + "px";
+        item.innerText = Math.random() > 0.3 ? "⭐" : "🍏";
     }
 
     function resetItem() {
