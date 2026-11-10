@@ -1,11 +1,11 @@
 // Dữ liệu 6 thành viên chính thức kèm đường dẫn tiểu sử riêng
 const membersData = [
-    { name: "Đặng Hoài Triệu", avatar: "assets/trieu.jpg", role: "Thành viên", link: "trieu.html" },
-    { name: "Phan Nguyễn Như Phúc", avatar: "assets/nphuc.jpg", role: "Thành viên", link: "phuc.html" },
-    { name: "Dương Phạm Ánh Ngân", avatar: "assets/angan.jpg", role: "Thành viên", link: "angan.html" },
-    { name: "Lê Huỳnh Khánh Ngọc", avatar: "assets/lngoc.jpg", role: "Thành viên", link: "lngoc.html" },
+    { name: "Đặng Hoài Triệu", avatar: "assets/trieu.jpg", role: "Tiên cầm đầu", link: "htriu.html" },
+    { name: "Phan Nguyễn Như Phúc", avatar: "assets/nphuc.jpg", role: "Tiên vai gãy", link: "phuc.html" },
+    { name: "Dương Phạm Ánh Ngân", avatar: "assets/angan.jpg", role: "Tiên điên", link: "angan.html" },
+    { name: "Lê Huỳnh Khánh Ngọc", avatar: "assets/lngoc.jpg", role: "Út Khỉ", link: "kngoc.html" },
     { name: "Dương Bảo Ngọc", avatar: "assets/bngoc.jpg", role: "Thành viên", link: "bngoc.html" },
-    { name: "Huỳnh Thanh Mai", avatar: "assets/tmai.jpg", role: "Thành viên", link: "tmai.html" }
+    { name: "Huỳnh Thanh Mai", avatar: "assets/tmai.jpg", role: "Tiên thú", link: "tmai.html" }
 ];
 
 // Dữ liệu bài tập liên kết các bài 3 đến 10
@@ -26,6 +26,57 @@ const presentationsData = [
 ];
 
 document.addEventListener("DOMContentLoaded", () => {
+    // --- BỔ SUNG: Hiệu ứng chuột lấp lánh & Âm thanh click pixel ---
+    const symbols = ["⭐", "✨", "💖", "💫"];
+    document.addEventListener("mousemove", (e) => {
+        if (Math.random() < 0.15) {
+            const span = document.createElement("span");
+            span.className = "cursor-particle";
+            span.innerText = symbols[Math.floor(Math.random() * symbols.length)];
+            span.style.left = e.pageX + "px";
+            span.style.top = e.pageY + "px";
+            span.style.position = "absolute";
+            span.style.fontSize = "14px";
+            span.style.pointerEvents = "none";
+            span.style.zIndex = "9999";
+            span.style.transition = "transform 0.8s ease, opacity 0.8s ease";
+            document.body.appendChild(span);
+
+            setTimeout(() => {
+                span.style.transform = `translate(${(Math.random() - 0.5) * 50}px, ${-50 - Math.random() * 30}px) scale(0.5)`;
+                span.style.opacity = "0";
+            }, 20);
+
+            setTimeout(() => span.remove(), 800);
+        }
+    });
+
+    const audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+    function playClickSound() {
+        if (audioCtx.state === 'suspended') {
+            audioCtx.resume();
+        }
+        const osc = audioCtx.createOscillator();
+        const gain = audioCtx.createGain();
+        osc.type = 'square';
+        osc.frequency.setValueAtTime(440, audioCtx.currentTime);
+        osc.frequency.exponentialRampToValueAtTime(110, audioCtx.currentTime + 0.08);
+        
+        gain.gain.setValueAtTime(0.1, audioCtx.currentTime);
+        gain.gain.exponentialRampToValueAtTime(0.01, audioCtx.currentTime + 0.08);
+
+        osc.connect(gain);
+        gain.connect(audioCtx.destination);
+        
+        osc.start();
+        osc.stop(audioCtx.currentTime + 0.08);
+    }
+
+    document.querySelectorAll("button, a").forEach(el => {
+        el.addEventListener("click", playClickSound);
+    });
+    // --- HẾT PHẦN BỔ SUNG HIỆU ỨNG ---
+
     // 1. Chuyển đổi tab Navigation
     const navButtons = document.querySelectorAll(".nav-btn");
     const sections = document.querySelectorAll(".content-section");
@@ -121,6 +172,94 @@ document.addEventListener("DOMContentLoaded", () => {
         searchPresentationInput.addEventListener("input", (e) => {
             renderPresentations(e.target.value);
         });
+    }
+
+    // --- BỔ SUNG: 6. Tính năng Sổ lưu bút (Guestbook) ---
+    const guestbookForm = document.getElementById("guestbook-form");
+    const messagesList = document.getElementById("messages-list");
+
+    let savedMessages = JSON.parse(localStorage.getItem("pixel_guestbook")) || [
+        { name: "Cô giáo Tin Học", text: "Trang web nhóm Sáu bà tiên sáng tạo và rất đẹp mắt!", time: "Hôm nay" }
+    ];
+
+    function renderMessages() {
+        if (!messagesList) return;
+        messagesList.innerHTML = savedMessages.map(m => `
+            <div style="background: #fff; border: 2px solid #14704f; padding: 10px; border-radius: 6px; box-shadow: 2px 2px 0px rgba(20,112,79,0.2);">
+                <strong style="color: #00a0b5;">👤 ${m.name}</strong> <span style="font-size: 0.75rem; color: #888; float: right;">${m.time}</span>
+                <p style="margin-top: 5px; font-size: 0.95rem; color: #333;">${m.text}</p>
+            </div>
+        `).join("");
+    }
+    renderMessages();
+
+    if (guestbookForm) {
+        guestbookForm.addEventListener("submit", (e) => {
+            e.preventDefault();
+            const name = document.getElementById("guest-name").value.trim();
+            const text = document.getElementById("guest-msg").value.trim();
+            if (name && text) {
+                savedMessages.unshift({ name, text, time: new Date().toLocaleDateString("vi-VN") });
+                localStorage.setItem("pixel_guestbook", JSON.stringify(savedMessages));
+                renderMessages();
+                guestbookForm.reset();
+            }
+        });
+    }
+
+    // --- BỔ SUNG: 7. Mini-game Catcher (Hứng Điểm 10) ---
+    const basket = document.getElementById("player-basket");
+    const item = document.getElementById("falling-item");
+    const container = document.getElementById("game-canvas-container");
+    const scoreDisplay = document.getElementById("game-score");
+    const startBtn = document.getElementById("start-game-btn");
+
+    let gameInterval;
+    let score = 0;
+    let basketX = 200;
+    let itemX = 150, itemY = 0;
+    let isPlaying = false;
+
+    if (startBtn && container) {
+        startBtn.addEventListener("click", () => {
+            if (isPlaying) return;
+            isPlaying = true;
+            score = 0;
+            scoreDisplay.innerText = score;
+            startBtn.style.display = "none";
+            itemY = 0;
+            itemX = Math.random() * (container.clientWidth - 40);
+
+            container.addEventListener("mousemove", (e) => {
+                const rect = container.getBoundingClientRect();
+                basketX = e.clientX - rect.left - 35;
+                if (basketX < 0) basketX = 0;
+                if (basketX > container.clientWidth - 70) basketX = container.clientWidth - 70;
+                basket.style.left = basketX + "px";
+            });
+
+            gameInterval = setInterval(() => {
+                itemY += 4;
+                item.style.top = itemY + "px";
+                item.style.left = itemX + "px";
+
+                if (itemY >= container.clientHeight - 45) {
+                    if (itemX + 25 >= basketX && itemX <= basketX + 70) {
+                        score += 10;
+                        scoreDisplay.innerText = score;
+                        resetItem();
+                    } else if (itemY >= container.clientHeight - 10) {
+                        resetItem();
+                    }
+                }
+            }, 20);
+        });
+    }
+
+    function resetItem() {
+        itemY = 0;
+        itemX = Math.random() * (container.clientWidth - 40);
+        item.innerText = Math.random() > 0.3 ? "⭐" : "🍏";
     }
 
     // 5. Cập nhật Thống kê tự động
