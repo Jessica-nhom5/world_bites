@@ -24,6 +24,8 @@
             <button class="nav-btn" data-target="members">Thành viên</button>
             <button class="nav-btn" data-target="assignments">Bài tập</button>
             <button class="nav-btn" data-target="presentations">Thuyết trình</button>
+            <button class="nav-btn" data-target="guestbook">Lưu bút 💌</button>
+            <button class="nav-btn" data-target="minigame">Game Hứng Điểm 🎮</button>
         </nav>
     </header>
 
@@ -95,6 +97,58 @@
             </div>
             <div class="cards-grid" id="presentations-container">
                 <!-- Dữ liệu được render động qua JavaScript -->
+            </div>
+        </section>
+
+        <!-- 5. Sổ lưu bút -->
+        <section id="guestbook" class="content-section">
+            <div class="section-title-box">
+                <h2>💌 Sổ Lưu Bút Sáu Bà Tiên</h2>
+            </div>
+            <div class="retro-window">
+                <div class="retro-window-header">
+                    <div class="window-dots">
+                        <span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span>
+                    </div>
+                    <span class="window-title">guestbook.exe</span>
+                </div>
+                <div class="window-body" style="padding: 20px;">
+                    <form id="guestbook-form" style="margin-bottom: 20px;">
+                        <input type="text" id="guest-name" placeholder="Tên của bạn..." class="retro-input" style="width: 100%; margin-bottom: 10px;" required>
+                        <textarea id="guest-msg" placeholder="Để lại lời nhắn, lời chúc thanh xuân ở đây nhé..." class="retro-input" style="width: 100%; height: 80px; margin-bottom: 10px; resize: none;" required></textarea>
+                        <button type="submit" class="retro-btn" style="cursor: pointer;">Gửi lời nhắn ✨</button>
+                    </form>
+                    <div id="messages-list" style="display: flex; flex-direction: column; gap: 10px; max-height: 250px; overflow-y: auto;">
+                        <!-- Các lời nhắn sẽ hiện ở đây -->
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 6. Mini-game Catcher -->
+        <section id="minigame" class="content-section">
+            <div class="section-title-box">
+                <h2>🎮 Game: Hứng Điểm 10 Tin Học</h2>
+            </div>
+            <div class="retro-window" style="text-align: center;">
+                <div class="retro-window-header">
+                    <div class="window-dots">
+                        <span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span>
+                    </div>
+                    <span class="window-title">catcher_game.exe</span>
+                </div>
+                <div class="window-body">
+                    <p style="margin-bottom: 10px; font-weight: bold;">Dùng chuột di chuyển để điều khiển giỏ hứng điểm 10!</p>
+                    <div style="font-size: 1.2rem; margin-bottom: 10px;">Điểm số: <span id="game-score" style="color: #00a0b5; font-weight: 900;">0</span></div>
+                    
+                    <!-- Khung chơi game -->
+                    <div id="game-canvas-container" style="position: relative; width: 100%; max-width: 500px; height: 350px; background: #14704f; margin: 0 auto; border: 3px solid #00a0b5; border-radius: 8px; overflow: hidden; cursor: pointer;">
+                        <div id="player-basket" style="position: absolute; bottom: 10px; left: 200px; width: 70px; height: 25px; background: #ffef5a; border: 2px solid #fff; border-radius: 6px; text-align: center; font-weight: bold; line-height: 21px; color: #14704f;">🧺 Giỏ</div>
+                        <div id="falling-item" style="position: absolute; top: 0px; left: 100px; font-size: 1.5rem;">⭐</div>
+                    </div>
+                    
+                    <button id="start-game-btn" class="retro-btn" style="margin-top: 15px; font-size: 1rem; padding: 8px 20px; cursor: pointer;">Bắt đầu chơi 🚀</button>
+                </div>
             </div>
         </section>
     </main>
