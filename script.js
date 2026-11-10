@@ -18,6 +18,7 @@ const assignmentsData = [
     { title: "Bài 8: Định dạng văn bản trên trang web", topic: "HTML & CSS", description: "Thực hành các thẻ định dạng văn bản strong, em và màu sắc chữ.", status: "Hoàn thành", statusClass: "status-done", author: "Nhóm 5", link: "Bai8.html" },
     { title: "Bài 9: Tạo bảng trong trang web", topic: "HTML & CSS Table", description: "Thực hành sử dụng thuộc tính style tạo viền và gộp ô cho bảng.", status: "Hoàn thành", statusClass: "status-done", author: "Nhóm 5", link: "Bai9.html" },
     { title: "Bài 10: Liên kết trang web", topic: "HTML Links", description: "Thực hành tạo liên kết nội bộ và liên kết ngoài (Facebook).", status: "Hoàn thành", statusClass: "status-done", author: "Nhóm 5", link: "Bai10.html" }
+    { title: "Bài 11: Chèn tệp tin đa phương tiện và khung nội tuyến vào trang web", topic: "Chèn", description: "", status: "Hoàn thành", statusClass: "status-done", author: "Nhóm 5", link: "Bai11.html" }
 ];
 
 const presentationsData = [
